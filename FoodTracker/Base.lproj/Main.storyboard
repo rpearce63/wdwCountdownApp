@@ -124,21 +124,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <datePicker contentMode="scaleAspectFit" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="150" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uu8-mz-fPI">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FiP-lG-oBS">
+                                <subviews>
+                                    <datePicker contentMode="scaleAspectFit" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="150" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uu8-mz-fPI">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="170" id="Bhe-hZ-QzG"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="495811041.47778797">
+                                            <!--2016-09-17 13:17:21 +0000-->
+                                        </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="473338800">
+                                            <!--2016-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="tDH-Rv-gpm"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Bhe-hZ-QzG"/>
+                                    <constraint firstItem="uu8-mz-fPI" firstAttribute="top" secondItem="FiP-lG-oBS" secondAttribute="top" id="0W8-Cp-WFa"/>
+                                    <constraint firstItem="uu8-mz-fPI" firstAttribute="centerX" secondItem="FiP-lG-oBS" secondAttribute="centerX" constant="16" id="2TA-Nw-zva"/>
+                                    <constraint firstAttribute="bottom" secondItem="uu8-mz-fPI" secondAttribute="bottom" id="Xf0-EE-8V3"/>
+                                    <constraint firstItem="uu8-mz-fPI" firstAttribute="leading" secondItem="FiP-lG-oBS" secondAttribute="leadingMargin" id="gQa-Fu-6Nt"/>
                                 </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="495811041.47778797">
-                                    <!--2016-09-17 13:17:21 +0000-->
-                                </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="473338800">
-                                    <!--2016-01-01 11:00:00 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="tDH-Rv-gpm"/>
-                                </connections>
-                            </datePicker>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfp-MZ-Mjz">
+                            </view>
+                            <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfp-MZ-Mjz">
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Castaway Club Level:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9E-tb-HhJ">
                                         <constraints>
@@ -155,7 +166,7 @@
                                         </connections>
                                     </pickerView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.77954715490341187" green="0.92670100927352905" blue="0.63476866483688354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="c9E-tb-HhJ" firstAttribute="centerX" secondItem="Gfu-Ol-yXG" secondAttribute="centerX" id="BYM-vr-GCM"/>
                                     <constraint firstAttribute="trailing" secondItem="Gfu-Ol-yXG" secondAttribute="trailing" id="Ewe-2F-z9K"/>
@@ -181,26 +192,26 @@
                         <constraints>
                             <constraint firstItem="vAO-RM-XKa" firstAttribute="leading" secondItem="tVv-II-n5t" secondAttribute="trailing" constant="9" id="0f7-aV-PZq"/>
                             <constraint firstItem="jaC-rX-iHd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="4om-LW-B9D"/>
+                            <constraint firstItem="FiP-lG-oBS" firstAttribute="top" secondItem="jaC-rX-iHd" secondAttribute="bottom" constant="8" symbolic="YES" id="5Qv-CB-1RB"/>
                             <constraint firstItem="tVv-II-n5t" firstAttribute="top" secondItem="hOm-Y4-H9Q" secondAttribute="bottom" constant="12" id="73c-5h-8ge"/>
-                            <constraint firstItem="uu8-mz-fPI" firstAttribute="top" secondItem="jaC-rX-iHd" secondAttribute="bottom" constant="8" symbolic="YES" id="8dk-Jw-OzB"/>
+                            <constraint firstItem="3Wm-Cf-GTn" firstAttribute="leading" secondItem="jaC-rX-iHd" secondAttribute="leading" id="DgS-hU-0at"/>
                             <constraint firstItem="3Wm-Cf-GTn" firstAttribute="leading" secondItem="sfp-MZ-Mjz" secondAttribute="leading" id="EVp-NP-LFB"/>
                             <constraint firstItem="hOm-Y4-H9Q" firstAttribute="top" secondItem="AMv-CM-5MX" secondAttribute="top" id="Fu9-jC-kfi"/>
-                            <constraint firstItem="jaC-rX-iHd" firstAttribute="trailing" secondItem="uu8-mz-fPI" secondAttribute="trailing" id="GAS-cI-sEa"/>
                             <constraint firstItem="AMv-CM-5MX" firstAttribute="leading" secondItem="hOm-Y4-H9Q" secondAttribute="trailing" constant="8" symbolic="YES" id="LDQ-Sz-t3r"/>
-                            <constraint firstItem="uu8-mz-fPI" firstAttribute="leading" secondItem="3Wm-Cf-GTn" secondAttribute="leading" id="OrQ-ee-Glx"/>
-                            <constraint firstItem="jaC-rX-iHd" firstAttribute="leading" secondItem="uu8-mz-fPI" secondAttribute="leading" id="QSs-Ow-ffS"/>
                             <constraint firstItem="jaC-rX-iHd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RVq-r2-d05"/>
-                            <constraint firstItem="3Wm-Cf-GTn" firstAttribute="top" secondItem="uu8-mz-fPI" secondAttribute="bottom" constant="30" id="Rhp-Qy-KOG"/>
                             <constraint firstItem="3Wm-Cf-GTn" firstAttribute="trailing" secondItem="AMv-CM-5MX" secondAttribute="trailing" id="SG1-DB-Xei"/>
-                            <constraint firstItem="uu8-mz-fPI" firstAttribute="trailing" secondItem="3Wm-Cf-GTn" secondAttribute="trailing" id="U2M-4h-OP8"/>
                             <constraint firstItem="vAO-RM-XKa" firstAttribute="trailing" secondItem="sfp-MZ-Mjz" secondAttribute="trailing" id="Ux1-qF-uBF"/>
+                            <constraint firstItem="FiP-lG-oBS" firstAttribute="centerX" secondItem="jaC-rX-iHd" secondAttribute="centerX" id="XQp-Yz-w4c"/>
                             <constraint firstItem="jaC-rX-iHd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XWQ-7U-Yno"/>
                             <constraint firstItem="vAO-RM-XKa" firstAttribute="top" secondItem="AMv-CM-5MX" secondAttribute="bottom" constant="8" symbolic="YES" id="Zah-fT-bHh"/>
-                            <constraint firstItem="sfp-MZ-Mjz" firstAttribute="top" secondItem="vAO-RM-XKa" secondAttribute="bottom" constant="62" id="efX-9G-62C"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sfp-MZ-Mjz" secondAttribute="bottom" constant="8" symbolic="YES" id="nan-h2-L6v"/>
-                            <constraint firstItem="sfp-MZ-Mjz" firstAttribute="top" secondItem="tVv-II-n5t" secondAttribute="bottom" constant="66" id="rFD-TA-CML"/>
+                            <constraint firstItem="3Wm-Cf-GTn" firstAttribute="top" secondItem="FiP-lG-oBS" secondAttribute="bottom" constant="21" id="dkG-GU-R0A"/>
+                            <constraint firstItem="sfp-MZ-Mjz" firstAttribute="top" secondItem="vAO-RM-XKa" secondAttribute="bottom" constant="8" id="efX-9G-62C"/>
+                            <constraint firstItem="FiP-lG-oBS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="fm3-EJ-Glv"/>
+                            <constraint firstItem="3Wm-Cf-GTn" firstAttribute="trailing" secondItem="jaC-rX-iHd" secondAttribute="trailing" id="jU9-U0-wvM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sfp-MZ-Mjz" secondAttribute="bottom" constant="62" id="nan-h2-L6v"/>
+                            <constraint firstItem="sfp-MZ-Mjz" firstAttribute="top" secondItem="tVv-II-n5t" secondAttribute="bottom" constant="12" id="rFD-TA-CML"/>
                             <constraint firstItem="AMv-CM-5MX" firstAttribute="leading" secondItem="vAO-RM-XKa" secondAttribute="leading" id="wdX-ry-yYZ"/>
-                            <constraint firstItem="hOm-Y4-H9Q" firstAttribute="top" secondItem="3Wm-Cf-GTn" secondAttribute="bottom" constant="31" id="yLo-w1-tnQ"/>
+                            <constraint firstItem="hOm-Y4-H9Q" firstAttribute="top" secondItem="3Wm-Cf-GTn" secondAttribute="bottom" constant="20" id="yLo-w1-tnQ"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="obw-ho-oen" appends="YES" id="E86-tn-iZy"/>
