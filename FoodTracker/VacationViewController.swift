@@ -54,10 +54,14 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             navigationItem.title = vacation.title
             titleTextField.text   = vacation.title
             //photoImageView.image = vacation.photo
-            arrivalDateLabel.text = dateFormatter.string(from: vacation.arrivalDate)
+            arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
             datePicker.date = vacation.arrivalDate
             parksSwitch.isOn = vacation.parks
             cruiseSwitch.isOn = vacation.cruise
+            ccLevelView.isHidden = !cruiseSwitch.isOn
+            ccLevelPicker.selectRow(ccLevelPickerData.index(of: vacation.ccLevel)!, inComponent: 0, animated: false)
+        } else {
+            arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: Date())
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
@@ -107,24 +111,6 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         saveButton.isEnabled = !text.isEmpty
     }
     
-    // MARK: UIImagePickerControllerDelegate
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        // Dismiss the picker if the user canceled.
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        // The info dictionary contains multiple representations of the image, and this uses the original.
-        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        // Set photoImageView to display the selected image.
-        photoImageView.image = selectedImage
-        
-        // Dismiss the picker.
-        dismiss(animated: true, completion: nil)
-    }
-    
     // MARK: Navigation
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -168,28 +154,9 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         arrivalDateLabel.text = dateFormatter.string(from: datePicker.date) 
     }
     
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        // Hide the keyboard.
-        titleTextField.resignFirstResponder()
-        
-        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
-        //let imagePickerController = UIImagePickerController()
-        
-        // Only allow photos to be picked, not taken.
-        //imagePickerController.sourceType = .photoLibrary
-        
-        // Make sure ViewController is notified when the user picks an image.
-        //imagePickerController.delegate = self
-        
-        //present(imagePickerController, animated: true, completion: nil)
-    }
     
     @IBAction func cruiseSwitchChanged(_ sender: UISwitch) {
-        if sender.isOn {
-            ccLevelView.isHidden = false
-        } else {
-            ccLevelView.isHidden = true
-        }
+        ccLevelView.isHidden = !sender.isOn
     }
         
 }
