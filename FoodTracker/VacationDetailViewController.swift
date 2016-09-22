@@ -20,6 +20,7 @@ class VacationDetailViewController: UIViewController {
     @IBOutlet weak var cruiseCheckin: UILabel!
     @IBOutlet weak var parksView: UIView!
     
+    @IBOutlet weak var tripPhoto: UIImageView!
     @IBOutlet weak var cruiseView: UIView!
     
     var vacation: Vacation?
@@ -43,6 +44,7 @@ class VacationDetailViewController: UIViewController {
                 cruiseCheckin.text = "\(dateFormatter.calculateCruiseCheckinDate(sailDate: vacation.arrivalDate, ccLevel: vacation.ccLevel))"
                 cruiseView.isHidden = false
             }
+            tripPhoto.image = vacation.photo
         }
     }
 

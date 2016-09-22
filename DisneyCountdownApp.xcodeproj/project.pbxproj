@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1DCA50651D8CCF5000454F52 /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCA50641D8CCF5000454F52 /* Vacation.swift */; };
-		1DDD36411D8DD98900453A0D /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36401D8DD98900453A0D /* Checkbox.swift */; };
 		1DDD36431D90C8C200453A0D /* VacationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */; };
 		1DDD36471D90D9F100453A0D /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36461D90D9F100453A0D /* DateUtils.swift */; };
-		1DDD364B1D915F2E00453A0D /* SSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD364A1D915F2E00453A0D /* SSRadioButton.swift */; };
-		1DDD364D1D915F6400453A0D /* SSRadioButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD364C1D915F6400453A0D /* SSRadioButtonController.swift */; };
 		CA1292781B150DF500303C8D /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1292771B150DF500303C8D /* RatingControl.swift */; };
 		CA1902E01B10E523000271C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902DF1B10E523000271C4 /* AppDelegate.swift */; };
 		CA1902E21B10E523000271C4 /* VacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902E11B10E523000271C4 /* VacationViewController.swift */; };
@@ -21,8 +18,6 @@
 		CA1902F51B10E523000271C4 /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902F41B10E523000271C4 /* FoodTrackerTests.swift */; };
 		CA5D06011B162F2300095F0F /* VacationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D06001B162F2300095F0F /* VacationTableViewCell.swift */; };
 		CA5D06031B162F2300095F0F /* VacationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D06021B162F2300095F0F /* VacationTableViewController.swift */; };
-		CA734E351B155077001A6F80 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA734E341B155077001A6F80 /* Meal.swift */; };
-		CA734E361B155077001A6F80 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA734E341B155077001A6F80 /* Meal.swift */; };
 		CA96F92B1B1144F7000CC7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA96F92A1B1144F7000CC7F8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -38,11 +33,8 @@
 
 /* Begin PBXFileReference section */
 		1DCA50641D8CCF5000454F52 /* Vacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vacation.swift; sourceTree = "<group>"; };
-		1DDD36401D8DD98900453A0D /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationDetailViewController.swift; sourceTree = "<group>"; };
 		1DDD36461D90D9F100453A0D /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
-		1DDD364A1D915F2E00453A0D /* SSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButton.swift; sourceTree = "<group>"; };
-		1DDD364C1D915F6400453A0D /* SSRadioButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSRadioButtonController.swift; sourceTree = "<group>"; };
 		CA1292771B150DF500303C8D /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		CA1902DC1B10E523000271C4 /* DisneyCountdownApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisneyCountdownApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1902DF1B10E523000271C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +47,6 @@
 		CA1902F61B10E523000271C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA5D06001B162F2300095F0F /* VacationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationTableViewCell.swift; sourceTree = "<group>"; };
 		CA5D06021B162F2300095F0F /* VacationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationTableViewController.swift; sourceTree = "<group>"; };
-		CA734E341B155077001A6F80 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		CA96F92A1B1144F7000CC7F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,11 +92,8 @@
 				CA1902DF1B10E523000271C4 /* AppDelegate.swift */,
 				CA1902E11B10E523000271C4 /* VacationViewController.swift */,
 				CA1292771B150DF500303C8D /* RatingControl.swift */,
-				CA734E341B155077001A6F80 /* Meal.swift */,
 				1DCA50641D8CCF5000454F52 /* Vacation.swift */,
 				CA1902E31B10E523000271C4 /* Main.storyboard */,
-				1DDD364A1D915F2E00453A0D /* SSRadioButton.swift */,
-				1DDD364C1D915F6400453A0D /* SSRadioButtonController.swift */,
 				1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */,
 				1DDD36461D90D9F100453A0D /* DateUtils.swift */,
 				CA5D06021B162F2300095F0F /* VacationTableViewController.swift */,
@@ -113,7 +101,6 @@
 				CA96F92A1B1144F7000CC7F8 /* Assets.xcassets */,
 				CA1902E81B10E523000271C4 /* LaunchScreen.storyboard */,
 				CA1902EB1B10E523000271C4 /* Info.plist */,
-				1DDD36401D8DD98900453A0D /* Checkbox.swift */,
 			);
 			name = Countdown;
 			path = FoodTracker;
@@ -179,6 +166,7 @@
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 7UVW89GGJ4;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					CA1902EF1B10E523000271C4 = {
 						CreatedOnToolsVersion = 7.0;
@@ -231,16 +219,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DDD36411D8DD98900453A0D /* Checkbox.swift in Sources */,
-				CA734E351B155077001A6F80 /* Meal.swift in Sources */,
 				CA1902E21B10E523000271C4 /* VacationViewController.swift in Sources */,
 				CA1292781B150DF500303C8D /* RatingControl.swift in Sources */,
 				CA1902E01B10E523000271C4 /* AppDelegate.swift in Sources */,
-				1DDD364B1D915F2E00453A0D /* SSRadioButton.swift in Sources */,
 				CA5D06031B162F2300095F0F /* VacationTableViewController.swift in Sources */,
 				1DDD36431D90C8C200453A0D /* VacationDetailViewController.swift in Sources */,
 				1DDD36471D90D9F100453A0D /* DateUtils.swift in Sources */,
-				1DDD364D1D915F6400453A0D /* SSRadioButtonController.swift in Sources */,
 				1DCA50651D8CCF5000454F52 /* Vacation.swift in Sources */,
 				CA5D06011B162F2300095F0F /* VacationTableViewCell.swift in Sources */,
 			);
@@ -250,7 +234,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA734E361B155077001A6F80 /* Meal.swift in Sources */,
 				CA1902F51B10E523000271C4 /* FoodTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -364,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -377,12 +360,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7UVW89GGJ4;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.disneyCountdownApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWCountdownApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -390,12 +375,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7UVW89GGJ4;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.disneyCountdownApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWCountdownApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

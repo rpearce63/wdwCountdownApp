@@ -9,7 +9,7 @@
 
 import UIKit
 
-class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SSRadioButtonControllerDelegate {
+class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate {
     // MARK: Properties
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -157,6 +157,12 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     @IBAction func cruiseSwitchChanged(_ sender: UISwitch) {
         ccLevelView.isHidden = !sender.isOn
+        parksSwitch.isOn = !sender.isOn
+    }
+    
+    @IBAction func parkSwitchChanged(_ sender: UISwitch) {
+        cruiseSwitch.isOn = !sender.isOn
+        ccLevelView.isHidden = sender.isOn
     }
         
 }

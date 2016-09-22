@@ -1,10 +1,9 @@
 //
-//  MealTableViewController.swift
+//  VacationTableViewController.swift
 //  FoodTracker
 //
-//  Created by Jane Appleseed on 5/27/15.
-//  Copyright © 2015 Apple Inc. All rights reserved.
-//  See LICENSE.txt for this sample’s licensing information.
+//  Created by Rick Pearce.
+//  Copyright © 2016 Pearce, Rick. All rights reserved.
 //
 
 import UIKit
@@ -18,28 +17,18 @@ class VacationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //dateFormatter.dateStyle = .long
+
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
         
         // Load any saved vacations, otherwise load sample data.
         if let savedVacations = loadVacations() {
             vacations += savedVacations
-        } else {
+        }
+        //else {
             // Load the sample data.
             //loadSampleVacations()
-        }
-    }
-    
-    func loadSampleVacations() {
-        let photo1 = UIImage(named: "wdwcastle-1")!
-        let vacation1 = Vacation(title: "Disney World", photo: photo1, arrivalDate: Date(), parks: true, cruise: false, ccLevel: "")!
-        
-        let photo2 = UIImage(named: "dclship")!
-        let vacation2 = Vacation(title: "Dream Cruise", photo: photo2, arrivalDate: Date(), parks: true, cruise: true, ccLevel: "Gold")!
-        
-        
-        vacations += [vacation1, vacation2]
+        //}
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,12 +51,11 @@ class VacationTableViewController: UITableViewController {
         let cellIdentifier = "VacationTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! VacationTableViewCell
         
-        // Fetches the appropriate meal for the data source layout.
+        // Fetches the appropriate vacation for the data source layout.
         let vacation = vacations[(indexPath as NSIndexPath).row]
         
         cell.titleLabel.text = vacation.title
         cell.photoImageView.image = vacation.photo
-        //cell.ratingControl.rating = meal.rating
         cell.arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
         cell.countdownLabel.text = "\(dateFormatter.calculateDaysUntilArrival(endDate: vacation.arrivalDate)) days to go!"
                 
@@ -133,11 +121,11 @@ class VacationTableViewController: UITableViewController {
     @IBAction func unwindToVacationList(_ sender: UIStoryboardSegue) {
         if let sourceViewController = sender.source as? VacationViewController, let vacation = sourceViewController.vacation {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                // Update an existing meal.
+                // Update an existing vacation.
                 vacations[(selectedIndexPath as NSIndexPath).row] = vacation
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
-                // Add a new meal.
+                // Add a new vacation.
                 let newIndexPath = IndexPath(row: vacations.count, section: 0)
                 vacations.append(vacation)
                 tableView.insertRows(at: [newIndexPath], with: .bottom)
