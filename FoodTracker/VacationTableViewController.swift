@@ -28,6 +28,8 @@ class VacationTableViewController: UITableViewController {
         vacations.sort { (v1, v2) -> Bool in
             return v1.arrivalDate < v2.arrivalDate
         }
+        //checkForKeyDates()
+        
         //else {
             // Load the sample data.
             //loadSampleVacations()
@@ -157,6 +159,35 @@ class VacationTableViewController: UITableViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Vacation.ArchiveURL.path) as? [Vacation]
     }
     
+//    func checkForKeyDates() {
+//        var message : String = ""
+//        for vacation: Vacation in vacations {
+//            let arrivalDate = vacation.arrivalDate
+//            let countdown = dateFormatter.calculateDaysUntilArrival(endDate: arrivalDate!)
+//            if countdown <= 7 {
+//                message.append("Arrival Date is only \(countdown) away")
+//            } else {
+//            if vacation.parks == true {
+//                let adrDays = dateFormatter.calculateDaysUntilArrival(endDate: dateFormatter.calculateADRDate(arrivalDate: arrivalDate!))
+//                
+//                let fpDate = dateFormatter.calculateFPDate(arrivalDate: arrivalDate!)
+//                
+//            } else {
+//                let cruiseDate = dateFormatter.calculateCruiseCheckinDate(sailDate: arrivalDate!, ccLevel: vacation.ccLevel)
+//            }
+//            
+//            
+//            }
+//        }
+//    }
     
+    func showAlert() {
+        let alert = UIAlertController(title: "Key Date Soon", message: "Be Alert!", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(OKAction)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     
 }
