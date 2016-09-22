@@ -12,7 +12,7 @@ import UIKit
 class VacationTableViewController: UITableViewController {
     // MARK: Properties
     
-    var vacations = [Vacation]()
+    var vacations :[Vacation] = []
     let dateFormatter: DateFormatter = DateFormatter()
 
     override func viewDidLoad() {
@@ -24,6 +24,9 @@ class VacationTableViewController: UITableViewController {
         // Load any saved vacations, otherwise load sample data.
         if let savedVacations = loadVacations() {
             vacations += savedVacations
+        }
+        vacations.sort { (v1, v2) -> Bool in
+            return v1.arrivalDate < v2.arrivalDate
         }
         //else {
             // Load the sample data.
@@ -130,6 +133,12 @@ class VacationTableViewController: UITableViewController {
                 vacations.append(vacation)
                 tableView.insertRows(at: [newIndexPath], with: .bottom)
             }
+            // Sort the rows by date
+            vacations.sort { (v1, v2) -> Bool in
+                return v1.arrivalDate < v2.arrivalDate
+            }
+            tableView.reloadData()
+            
             // Save the vacations.
             saveVacations()
         }
@@ -147,6 +156,7 @@ class VacationTableViewController: UITableViewController {
     func loadVacations() -> [Vacation]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Vacation.ArchiveURL.path) as? [Vacation]
     }
+    
     
     
 }
