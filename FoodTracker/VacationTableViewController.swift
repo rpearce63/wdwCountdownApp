@@ -20,7 +20,7 @@ class VacationTableViewController: UITableViewController {
 
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
-        
+        //editButtonItem.title = "Edit List"
         // Load any saved vacations, otherwise load sample data.
         if let savedVacations = loadVacations() {
             vacations += savedVacations

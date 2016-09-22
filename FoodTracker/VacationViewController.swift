@@ -66,6 +66,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         // Enable the Save button only if the text field has a valid Meal name.
         checkValidVacationName()
+        titleTextField.becomeFirstResponder()
     }
     
     
