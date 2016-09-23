@@ -364,7 +364,7 @@
 				DEVELOPMENT_TEAM = 7UVW89GGJ4;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWCountdownApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWCountdownTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -379,7 +379,7 @@
 				DEVELOPMENT_TEAM = 7UVW89GGJ4;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWCountdownApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWCountdownTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
