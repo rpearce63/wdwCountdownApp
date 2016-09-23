@@ -32,28 +32,27 @@ extension DateFormatter {
         let flags = NSCalendar.Unit.day
         let components = calendar.components(flags, from: Date(), to: endDate, options: [])
         
-        return components.day!  // This will return the number of day(s) between dates
+        return components.day! + 1 // This will return the number of day(s) between dates
         
     }
     
-    func calculateKeyDate(fromDate: Date, dayCount: Int) -> String {
+    func calculateKeyDate(fromDate: Date, dayCount: Int) -> Date {
         
         let calculatedDate = NSCalendar.current.date(byAdding: .day, value: dayCount, to: fromDate)
         
-        return getDateFormatter(style: .medium).string(from: calculatedDate!)
-    
+        return calculatedDate!
     }
     
     func calculateADRDate(arrivalDate: Date) -> String{
-        return calculateKeyDate(fromDate: arrivalDate, dayCount: -180)
+        return getDateFormatter(style: .medium).string(from:  calculateKeyDate(fromDate: arrivalDate, dayCount: -180))
     }
     
     func calculateFPDate(arrivalDate: Date) -> String {
-        return calculateKeyDate(fromDate: arrivalDate, dayCount: -60)
+         return getDateFormatter(style: .medium).string(from:  calculateKeyDate(fromDate: arrivalDate, dayCount: -60))
     }
     
     func calculateCruiseCheckinDate(sailDate: Date, ccLevel: String) -> String {
-        return calculateKeyDate(fromDate: sailDate, dayCount: getCCLeveCount(ccLevel: ccLevel))
+        return getDateFormatter(style: .medium).string(from:   calculateKeyDate(fromDate: sailDate, dayCount: getCCLeveCount(ccLevel: ccLevel)))
     }
     
     func getCCLeveCount(ccLevel: String) -> Int {
