@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTracker/VacationTableViewController.swift"
-            timestampString = "496206386.687805"
+            timestampString = "496382300.348687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodTracker/VacationTableViewController.swift"
-            timestampString = "496279241.149899"
+            timestampString = "496382300.348687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "checkForKeyDates()"
             landmarkType = "7">
          </BreakpointContent>

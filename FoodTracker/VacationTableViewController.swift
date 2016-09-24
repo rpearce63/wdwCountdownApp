@@ -25,6 +25,10 @@ class VacationTableViewController: UITableViewController {
         if let savedVacations = loadVacations() {
             vacations += savedVacations
         }
+        if vacations.count == 0 {
+            // go to Add New page for initial set up
+            performSegue(withIdentifier: "AddItem", sender: Any?.self)
+        }
         vacations.sort { (v1, v2) -> Bool in
             return v1.arrivalDate < v2.arrivalDate
         }
@@ -65,6 +69,12 @@ class VacationTableViewController: UITableViewController {
         cell.countdownLabel.text = "\(dateFormatter.calculateDaysUntilArrival(endDate: vacation.arrivalDate)) days to go!"
                 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenHeight = screenSize.height
+        return (screenHeight * 0.8) / CGFloat(vacations.count)
     }
 
     // Override to support conditional editing of the table view.
