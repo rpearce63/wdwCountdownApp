@@ -24,21 +24,21 @@ extension DateFormatter {
     
     func calculateDaysUntilArrival(endDate: Date) -> Int {
         
-        // Assuming that firstDate and secondDate are defined
-        // ...
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        if today.compare(endDate) == .orderedDescending {
+            return -1
+        }
+        let diff = calendar.dateComponents([.day], from: today, to: endDate)
         
-        let calendar: NSCalendar = NSCalendar.current as NSCalendar
-        
-        let flags = NSCalendar.Unit.day
-        let components = calendar.components(flags, from: Date(), to: endDate, options: [])
-        
-        return components.day! + 1 // This will return the number of day(s) between dates
+        print(diff.day!)
+        return diff.day! // This will return the number of day(s) between dates
         
     }
     
     func calculateKeyDate(fromDate: Date, dayCount: Int) -> Date {
         
-        let calculatedDate = NSCalendar.current.date(byAdding: .day, value: dayCount, to: fromDate)
+        let calculatedDate = Calendar.current.date(byAdding: .day, value: dayCount, to: fromDate)
         
         return calculatedDate!
     }
