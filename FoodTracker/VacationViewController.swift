@@ -1,6 +1,6 @@
 //
-//  MealViewController.swift
-//  FoodTracker
+//  VacationViewController.swift
+//  DisneyCountdownApp
 //
 //  Created by Jane Appleseed on 5/23/15.
 //  Copyright © 2015 Apple Inc. All rights reserved.
@@ -23,7 +23,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var ccLevelPicker: UIPickerView!
    
     /*
-        This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
+        This value is either passed by `VacationTableViewController` in `prepareForSegue(_:sender:)`
         or constructed as part of adding a new meal.
     */
     var vacation: Vacation?

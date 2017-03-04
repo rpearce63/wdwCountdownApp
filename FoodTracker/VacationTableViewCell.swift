@@ -1,6 +1,6 @@
 //
-//  MealTableViewCell.swift
-//  FoodTracker
+//  VacationTableViewCell.swift
+//  DisneyCountdownApp
 //
 //  Created by Jane Appleseed on 5/27/15.
 //  Copyright © 2015 Apple Inc. All rights reserved.

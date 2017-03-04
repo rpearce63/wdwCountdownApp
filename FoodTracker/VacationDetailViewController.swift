@@ -1,6 +1,6 @@
 //
 //  VacationDetailViewController.swift
-//  FoodTracker
+//  DisneyCountdownApp
 //
 //  Created by Rick on 9/19/16.
 //  Copyright © 2016 Apple Inc. All rights reserved.

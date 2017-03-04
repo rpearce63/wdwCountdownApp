@@ -1,6 +1,6 @@
 //
 //  VacationTableViewController.swift
-//  FoodTracker
+//  DisneyCountdownApp
 //
 //  Created by Rick Pearce.
 //  Copyright © 2016 Pearce, Rick. All rights reserved.

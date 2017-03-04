@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  FoodTracker
+//  DisneyCountdownApp
 //
 //  Created by Jane Appleseed on 5/23/15.
 //  Copyright © 2015 Apple Inc. All rights reserved.
