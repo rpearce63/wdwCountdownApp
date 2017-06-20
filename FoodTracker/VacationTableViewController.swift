@@ -23,7 +23,17 @@ class VacationTableViewController: UITableViewController {
         //editButtonItem.title = "Edit List"
         // Load any saved vacations, otherwise load sample data.
         if let savedVacations = loadVacations() {
-            vacations += savedVacations
+            
+            //remove past vacations
+            for vacation: Vacation in savedVacations {
+                
+                let arrivalDate = vacation.arrivalDate
+                let countdown = dateFormatter.calculateDaysUntilArrival(endDate: arrivalDate!)
+                if countdown >= 0 {
+                    vacations.append(vacation)
+                }
+            }
+            
         }
         if vacations.count == 0 {
             // go to Add New page for initial set up
