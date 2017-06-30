@@ -66,7 +66,7 @@ class RatingControl: UIView {
     
     // MARK: Button Action
     
-    func ratingButtonTapped(_ button: UIButton) {
+    @objc func ratingButtonTapped(_ button: UIButton) {
         rating = ratingButtons.index(of: button)! + 1
         
         updateButtonSelectionStates()

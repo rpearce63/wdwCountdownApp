@@ -15,7 +15,6 @@
 		CA1902E21B10E523000271C4 /* VacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902E11B10E523000271C4 /* VacationViewController.swift */; };
 		CA1902E51B10E523000271C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1902E31B10E523000271C4 /* Main.storyboard */; };
 		CA1902EA1B10E523000271C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1902E81B10E523000271C4 /* LaunchScreen.storyboard */; };
-		CA1902F51B10E523000271C4 /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902F41B10E523000271C4 /* FoodTrackerTests.swift */; };
 		CA5D06011B162F2300095F0F /* VacationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D06001B162F2300095F0F /* VacationTableViewCell.swift */; };
 		CA5D06031B162F2300095F0F /* VacationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5D06021B162F2300095F0F /* VacationTableViewController.swift */; };
 		CA96F92B1B1144F7000CC7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA96F92A1B1144F7000CC7F8 /* Assets.xcassets */; };
@@ -43,8 +42,6 @@
 		CA1902E91B10E523000271C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA1902EB1B10E523000271C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA1902F01B10E523000271C4 /* DisneyCountdownAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DisneyCountdownAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA1902F41B10E523000271C4 /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
-		CA1902F61B10E523000271C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA5D06001B162F2300095F0F /* VacationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationTableViewCell.swift; sourceTree = "<group>"; };
 		CA5D06021B162F2300095F0F /* VacationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationTableViewController.swift; sourceTree = "<group>"; };
 		CA96F92A1B1144F7000CC7F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				CA1902DE1B10E523000271C4 /* Countdown */,
-				CA1902F31B10E523000271C4 /* FoodTrackerTests */,
 				CA1902DD1B10E523000271C4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,15 +100,6 @@
 			);
 			name = Countdown;
 			path = FoodTracker;
-			sourceTree = "<group>";
-		};
-		CA1902F31B10E523000271C4 /* FoodTrackerTests */ = {
-			isa = PBXGroup;
-			children = (
-				CA1902F41B10E523000271C4 /* FoodTrackerTests.swift */,
-				CA1902F61B10E523000271C4 /* Info.plist */,
-			);
-			path = FoodTrackerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,13 +146,13 @@
 		CA1902D41B10E523000271C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Apple Inc.";
 				TargetAttributes = {
 					CA1902DB1B10E523000271C4 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 7UVW89GGJ4;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					CA1902EF1B10E523000271C4 = {
@@ -234,7 +221,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA1902F51B10E523000271C4 /* FoodTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,14 +262,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -323,14 +315,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -367,7 +365,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWCountdownTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -383,7 +382,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWCountdownTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

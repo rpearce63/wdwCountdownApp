@@ -72,20 +72,21 @@ class VacationTableViewController: UITableViewController {
         
         // Fetches the appropriate vacation for the data source layout.
         let vacation = vacations[(indexPath as NSIndexPath).row]
-        
+        let rowBackgroundImg = vacation.parks ? "wdw-row-background" : "dcl-row-background"
         cell.titleLabel.text = vacation.title
-        cell.photoImageView.image = vacation.photo
+        cell.backgroundView = UIImageView(image: UIImage(named: rowBackgroundImg))
+        //cell.photoImageView.image = vacation.photo
         cell.arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
         cell.countdownLabel.text = "\(dateFormatter.calculateDaysUntilArrival(endDate: vacation.arrivalDate)) days to go!"
                 
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let screenSize: CGRect = UIScreen.main.bounds
-        let screenHeight = screenSize.height
-        return (screenHeight * 0.8) / CGFloat(vacations.count)
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let screenSize: CGRect = UIScreen.main.bounds
+//        let screenHeight = screenSize.height
+//        return (screenHeight * 0.8) / CGFloat(vacations.count)
+//    }
 
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
