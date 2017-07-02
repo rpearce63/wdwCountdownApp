@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/rick/Downloads/Start-Dev-iOS-Apps-10/FoodTracker - Persist Data/DisneyCountdownApp.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

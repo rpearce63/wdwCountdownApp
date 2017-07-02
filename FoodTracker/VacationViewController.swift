@@ -9,6 +9,8 @@
 
 import UIKit
 
+
+
 class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UINavigationControllerDelegate {
     // MARK: Properties
     
@@ -30,6 +32,8 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     var parksChecked: Bool = false
     var cruiseChecked: Bool = false
     
+   
+    
     //var radioButtonController: SSRadioButtonsController?
     
     let ccLevelPickerData: [String] = ["First Cruise", "Silver", "Gold", "Platinum", "Concierge"]
@@ -37,6 +41,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.ccLevelPicker.delegate = self
         self.ccLevelPicker.dataSource = self
         

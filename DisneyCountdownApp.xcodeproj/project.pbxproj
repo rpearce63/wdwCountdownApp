@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D22D3501F094F9F00E60F37 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D22D34F1F094F9500E60F37 /* GoogleMobileAds.framework */; };
 		1DCA50651D8CCF5000454F52 /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCA50641D8CCF5000454F52 /* Vacation.swift */; };
 		1DDD36431D90C8C200453A0D /* VacationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */; };
 		1DDD36471D90D9F100453A0D /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36461D90D9F100453A0D /* DateUtils.swift */; };
@@ -31,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D22D34F1F094F9500E60F37 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = System/Library/Frameworks/GoogleMobileAds.framework; sourceTree = SDKROOT; };
+		1D907CC21F094511009B71F0 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		1D907CC41F094A0A009B71F0 /* GoogleMobileAdsSdkiOS-7.21.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "GoogleMobileAdsSdkiOS-7.21.0"; path = "../../Downloads/GoogleMobileAdsSdkiOS-7.21.0"; sourceTree = "<group>"; };
+		1D907CC61F094A35009B71F0 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../../Downloads/GoogleMobileAdsSdkiOS-7.21.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
 		1DCA50641D8CCF5000454F52 /* Vacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vacation.swift; sourceTree = "<group>"; };
 		1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationDetailViewController.swift; sourceTree = "<group>"; };
 		1DDD36461D90D9F100453A0D /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D22D3501F094F9F00E60F37 /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,11 +71,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D907CC11F094510009B71F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D907CC61F094A35009B71F0 /* GoogleMobileAds.framework */,
+				1D22D34F1F094F9500E60F37 /* GoogleMobileAds.framework */,
+				1D907CC41F094A0A009B71F0 /* GoogleMobileAdsSdkiOS-7.21.0 */,
+				1D907CC21F094511009B71F0 /* iAd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CA1902D31B10E523000271C4 = {
 			isa = PBXGroup;
 			children = (
 				CA1902DE1B10E523000271C4 /* Countdown */,
 				CA1902DD1B10E523000271C4 /* Products */,
+				1D907CC11F094510009B71F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

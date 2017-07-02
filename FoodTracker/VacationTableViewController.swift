@@ -7,17 +7,25 @@
 //
 
 import UIKit
-
+import GoogleMobileAds
 
 class VacationTableViewController: UITableViewController {
     // MARK: Properties
-    
+     var bannerView: GADBannerView!
     var vacations :[Vacation] = []
     let dateFormatter: DateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController!.isToolbarHidden = false
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        self.navigationController?.toolbar.addSubview(bannerView)
+        bannerView.adUnitID = "ca-app-pub-5535985233243357/2100500420"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        request.testDevices = [ kGADSimulatorID, "95194d67850f2724e5c5bf840fb7b33d" ]
+        bannerView.load(request)
+        
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
         //editButtonItem.title = "Edit List"
