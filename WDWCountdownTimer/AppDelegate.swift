@@ -9,6 +9,7 @@
 
 import UIKit
 import GoogleMobileAds
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize the Google Mobile Ads SDK.
         // Sample AdMob app ID: ca-app-pub-3940256099942544~1458002511
         GADMobileAds.configure(withApplicationID: "ca-app-pub-5535985233243357~8147034025")
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {(accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+        }
+        scheduleBadgeUpdate()
         sleep(2)
         return true
     }
@@ -47,6 +54,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func scheduleBadgeUpdate() {
+        let content = UNMutableNotificationContent()
+        let currentBadgeCount = UIApplication.shared.applicationIconBadgeNumber
+        if (currentBadgeCount == 0) {return}
+        content.badge = currentBadgeCount - 1 as NSNumber
+        // Configure the trigger for midnight every day.
+        var dateInfo = DateComponents()
+        dateInfo.hour = 0
+        dateInfo.minute = 0
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
+        
+        // Create the request object.
+        let request = UNNotificationRequest(identifier: "UpdateBadge", content: content, trigger: trigger)
+        
+        // Schedule the request.
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+            if let theError = error {
+                print(theError.localizedDescription)
+            }
+        }
+    }
 
 }
 

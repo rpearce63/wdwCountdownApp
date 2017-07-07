@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import UserNotifications
 
 class VacationTableViewController: UITableViewController {
     // MARK: Properties
@@ -46,16 +47,16 @@ class VacationTableViewController: UITableViewController {
         if vacations.count == 0 {
             // go to Add New page for initial set up
             performSegue(withIdentifier: "AddItem", sender: Any?.self)
+        } else {
+            vacations.sort { (v1, v2) -> Bool in
+                return v1.arrivalDate < v2.arrivalDate
+            }
+            
+            updateBadge()
+            checkForKeyDates()
         }
-        vacations.sort { (v1, v2) -> Bool in
-            return v1.arrivalDate < v2.arrivalDate
-        }
-        checkForKeyDates()
         
-        //else {
-            // Load the sample data.
-            //loadSampleVacations()
-        //}
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -169,7 +170,7 @@ class VacationTableViewController: UITableViewController {
                 return v1.arrivalDate < v2.arrivalDate
             }
             tableView.reloadData()
-            
+            updateBadge()
             // Save the vacations.
             saveVacations()
         }
@@ -220,6 +221,13 @@ class VacationTableViewController: UITableViewController {
         
         self.present(alert, animated: true, completion: nil)
         
+    }
+    
+    func updateBadge() {
+        let application = UIApplication.shared
+        //application.registerForRemoteNotifications()
+        let countdown = dateFormatter.calculateDaysUntilArrival(endDate: vacations[0].arrivalDate)
+        application.applicationIconBadgeNumber = countdown
     }
     
 }
