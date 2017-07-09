@@ -52,7 +52,7 @@ class VacationTableViewController: UITableViewController {
                 return v1.arrivalDate < v2.arrivalDate
             }
             
-            updateBadge()
+            //updateBadge()
             checkForKeyDates()
         }
         
@@ -170,7 +170,7 @@ class VacationTableViewController: UITableViewController {
                 return v1.arrivalDate < v2.arrivalDate
             }
             tableView.reloadData()
-            updateBadge()
+            //updateBadge()
             // Save the vacations.
             saveVacations()
         }

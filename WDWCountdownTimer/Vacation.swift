@@ -17,6 +17,7 @@ class Vacation: NSObject, NSCoding {
     var parks: Bool
     var cruise: Bool
     var ccLevel: String
+    var notes: [NSString]?
     
     
     // MARK: Archiving Paths
@@ -33,11 +34,12 @@ class Vacation: NSObject, NSCoding {
         static let parksKey = "parks"
         static let cruiseKey = "cruise"
         static let ccLevelKey = "ccLevel"
+        static let notesKey = "notes"
     }
     
     // MARK: Initialization
     
-    init?(title: String, photo: UIImage?, arrivalDate: Date?, parks: Bool, cruise: Bool, ccLevel: String) {
+    init?(title: String, photo: UIImage?, arrivalDate: Date?, parks: Bool, cruise: Bool, ccLevel: String, notes: [NSString]?) {
         // Initialize stored properties.
        self.title = title
         self.photo = photo
@@ -45,6 +47,7 @@ class Vacation: NSObject, NSCoding {
         self.parks = parks
         self.cruise = cruise
         self.ccLevel = ccLevel
+        self.notes = notes
         
         super.init()
         
@@ -63,6 +66,7 @@ class Vacation: NSObject, NSCoding {
         aCoder.encode(parks, forKey: PropertyKey.parksKey)
         aCoder.encode(cruise, forKey: PropertyKey.cruiseKey)
         aCoder.encode(ccLevel, forKey: PropertyKey.ccLevelKey)
+        aCoder.encode(notes, forKey: PropertyKey.notesKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -75,7 +79,8 @@ class Vacation: NSObject, NSCoding {
         let parks = aDecoder.decodeBool(forKey: PropertyKey.parksKey)
         let cruise = aDecoder.decodeBool(forKey: PropertyKey.cruiseKey)
         let ccLevel = aDecoder.decodeObject(forKey: PropertyKey.ccLevelKey) as! String
+        let notes = aDecoder.decodeObject(forKey: PropertyKey.notesKey) as! [NSString]?
         // Must call designated initializer.
-        self.init(title: title, photo: photo, arrivalDate: arrivalDate, parks: parks, cruise: cruise, ccLevel: ccLevel)
+        self.init(title: title, photo: photo, arrivalDate: arrivalDate, parks: parks, cruise: cruise, ccLevel: ccLevel, notes: notes)
     }
 }

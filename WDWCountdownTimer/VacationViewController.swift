@@ -140,8 +140,9 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             let parksBool = parksSwitch.isOn
             let cruiseBool = cruiseSwitch.isOn
             let ccLevel = ccLevelPickerData[ccLevelPicker.selectedRow(inComponent: 0)]
+            
             // Set the meal to be passed to MealListTableViewController after the unwind segue.
-            vacation = Vacation(title: title, photo: photo, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool, ccLevel: ccLevel)
+            vacation = Vacation(title: title, photo: photo, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool, ccLevel: ccLevel, notes: [])
         }
     }
     
