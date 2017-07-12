@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		1D0A44B61F0C0C8900C32FA0 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA8C3E21F0C0A88003A1F51 /* GoogleMobileAds.framework */; };
 		1DA8C3E01F0C0A05003A1F51 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA8C3DF1F0C0A05003A1F51 /* Default-568h@2x.png */; };
+		1DB900691F126FD10022BAA4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEE31EE1F1263AF00C4F881 /* NotificationCenter.framework */; };
+		1DB9006C1F126FD10022BAA4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9006B1F126FD10022BAA4 /* TodayViewController.swift */; };
+		1DB9006F1F126FD10022BAA4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9006D1F126FD10022BAA4 /* MainInterface.storyboard */; };
+		1DB900731F126FD10022BAA4 /* WDWCountdownWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1DB900681F126FD10022BAA4 /* WDWCountdownWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1DCA50651D8CCF5000454F52 /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCA50641D8CCF5000454F52 /* Vacation.swift */; };
 		1DDD36431D90C8C200453A0D /* VacationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */; };
 		1DDD36471D90D9F100453A0D /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36461D90D9F100453A0D /* DateUtils.swift */; };
+		1DEE31E81F12551300C4F881 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE31E71F12551300C4F881 /* Settings.bundle */; };
 		CA1902E01B10E523000271C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902DF1B10E523000271C4 /* AppDelegate.swift */; };
 		CA1902E21B10E523000271C4 /* VacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902E11B10E523000271C4 /* VacationViewController.swift */; };
 		CA1902E51B10E523000271C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1902E31B10E523000271C4 /* Main.storyboard */; };
@@ -21,13 +26,45 @@
 		CA96F92B1B1144F7000CC7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA96F92A1B1144F7000CC7F8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1DB900711F126FD10022BAA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1902D41B10E523000271C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DB900671F126FD10022BAA4;
+			remoteInfo = WDWCountdownWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1DEE31FD1F1263AF00C4F881 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1DB900731F126FD10022BAA4 /* WDWCountdownWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1DA8C3DF1F0C0A05003A1F51 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1DA8C3E21F0C0A88003A1F51 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = System/Library/Frameworks/GoogleMobileAds.framework; sourceTree = SDKROOT; };
+		1DB900681F126FD10022BAA4 /* WDWCountdownWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WDWCountdownWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DB9006B1F126FD10022BAA4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		1DB9006E1F126FD10022BAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		1DB900701F126FD10022BAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DB900741F126FD10022BAA4 /* WDWCountdownTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDWCountdownTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DB900781F127A950022BAA4 /* WDWCountdownTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WDWCountdownTimer.entitlements; path = WDWCountdownTimer/WDWCountdownTimer.entitlements; sourceTree = "<group>"; };
+		1DB900791F127AD00022BAA4 /* WDWCountdownWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WDWCountdownWidget.entitlements; sourceTree = "<group>"; };
 		1DCA50641D8CCF5000454F52 /* Vacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vacation.swift; path = WDWCountdownTimer/Vacation.swift; sourceTree = "<group>"; };
 		1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VacationDetailViewController.swift; path = WDWCountdownTimer/VacationDetailViewController.swift; sourceTree = "<group>"; };
 		1DDD36461D90D9F100453A0D /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = WDWCountdownTimer/DateUtils.swift; sourceTree = "<group>"; };
-		CA1902DC1B10E523000271C4 /* WDWCountdownTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDWCountdownTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DEE31E71F12551300C4F881 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		1DEE31EE1F1263AF00C4F881 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		CA1902DF1B10E523000271C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = WDWCountdownTimer/AppDelegate.swift; sourceTree = "<group>"; };
 		CA1902E11B10E523000271C4 /* VacationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VacationViewController.swift; path = WDWCountdownTimer/VacationViewController.swift; sourceTree = "<group>"; };
 		CA1902E41B10E523000271C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +76,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1DB900651F126FD10022BAA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DB900691F126FD10022BAA4 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA1902D91B10E523000271C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,6 +98,8 @@
 		1D8CDBBF1F0C5065003D7CDD /* WDWCountdownTimer */ = {
 			isa = PBXGroup;
 			children = (
+				1DEE31E71F12551300C4F881 /* Settings.bundle */,
+				1DB900781F127A950022BAA4 /* WDWCountdownTimer.entitlements */,
 				CA1902DF1B10E523000271C4 /* AppDelegate.swift */,
 				CA1902E11B10E523000271C4 /* VacationViewController.swift */,
 				1DCA50641D8CCF5000454F52 /* Vacation.swift */,
@@ -72,8 +119,20 @@
 			isa = PBXGroup;
 			children = (
 				1DA8C3E21F0C0A88003A1F51 /* GoogleMobileAds.framework */,
+				1DEE31EE1F1263AF00C4F881 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DB9006A1F126FD10022BAA4 /* WDWCountdownWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1DB900791F127AD00022BAA4 /* WDWCountdownWidget.entitlements */,
+				1DB9006B1F126FD10022BAA4 /* TodayViewController.swift */,
+				1DB9006D1F126FD10022BAA4 /* MainInterface.storyboard */,
+				1DB900701F126FD10022BAA4 /* Info.plist */,
+			);
+			path = WDWCountdownWidget;
 			sourceTree = "<group>";
 		};
 		CA1902D31B10E523000271C4 = {
@@ -81,22 +140,33 @@
 			children = (
 				1DA8C3DF1F0C0A05003A1F51 /* Default-568h@2x.png */,
 				1D8CDBBF1F0C5065003D7CDD /* WDWCountdownTimer */,
-				CA1902DD1B10E523000271C4 /* Products */,
+				1DB9006A1F126FD10022BAA4 /* WDWCountdownWidget */,
 				1DA8C3E11F0C0A88003A1F51 /* Frameworks */,
+				1DB900681F126FD10022BAA4 /* WDWCountdownWidget.appex */,
+				1DB900741F126FD10022BAA4 /* WDWCountdownTimer.app */,
 			);
-			sourceTree = "<group>";
-		};
-		CA1902DD1B10E523000271C4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CA1902DC1B10E523000271C4 /* WDWCountdownTimer.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1DB900671F126FD10022BAA4 /* WDWCountdownWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DB900751F126FD10022BAA4 /* Build configuration list for PBXNativeTarget "WDWCountdownWidget" */;
+			buildPhases = (
+				1DB900641F126FD10022BAA4 /* Sources */,
+				1DB900651F126FD10022BAA4 /* Frameworks */,
+				1DB900661F126FD10022BAA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WDWCountdownWidget;
+			productName = WDWCountdownWidget;
+			productReference = 1DB900681F126FD10022BAA4 /* WDWCountdownWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CA1902DB1B10E523000271C4 /* WDWCountdownTimer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA1902F91B10E523000271C4 /* Build configuration list for PBXNativeTarget "WDWCountdownTimer" */;
@@ -104,14 +174,16 @@
 				CA1902D81B10E523000271C4 /* Sources */,
 				CA1902D91B10E523000271C4 /* Frameworks */,
 				CA1902DA1B10E523000271C4 /* Resources */,
+				1DEE31FD1F1263AF00C4F881 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1DB900721F126FD10022BAA4 /* PBXTargetDependency */,
 			);
 			name = WDWCountdownTimer;
 			productName = FoodTracker;
-			productReference = CA1902DC1B10E523000271C4 /* WDWCountdownTimer.app */;
+			productReference = 1DB900741F126FD10022BAA4 /* WDWCountdownTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -120,14 +192,29 @@
 		CA1902D41B10E523000271C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Apple Inc.";
 				TargetAttributes = {
+					1DB900671F126FD10022BAA4 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					CA1902DB1B10E523000271C4 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = D9R62VXR3G;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -140,22 +227,32 @@
 				Base,
 			);
 			mainGroup = CA1902D31B10E523000271C4;
-			productRefGroup = CA1902DD1B10E523000271C4 /* Products */;
+			productRefGroup = CA1902D31B10E523000271C4;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				CA1902DB1B10E523000271C4 /* WDWCountdownTimer */,
+				1DB900671F126FD10022BAA4 /* WDWCountdownWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1DB900661F126FD10022BAA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DB9006F1F126FD10022BAA4 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA1902DA1B10E523000271C4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CA1902EA1B10E523000271C4 /* LaunchScreen.storyboard in Resources */,
 				1DA8C3E01F0C0A05003A1F51 /* Default-568h@2x.png in Resources */,
+				1DEE31E81F12551300C4F881 /* Settings.bundle in Resources */,
 				CA96F92B1B1144F7000CC7F8 /* Assets.xcassets in Resources */,
 				CA1902E51B10E523000271C4 /* Main.storyboard in Resources */,
 			);
@@ -164,6 +261,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1DB900641F126FD10022BAA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DB9006C1F126FD10022BAA4 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA1902D81B10E523000271C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -180,7 +285,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1DB900721F126FD10022BAA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DB900671F126FD10022BAA4 /* WDWCountdownWidget */;
+			targetProxy = 1DB900711F126FD10022BAA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		1DB9006D1F126FD10022BAA4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DB9006E1F126FD10022BAA4 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		CA1902E31B10E523000271C4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -202,6 +323,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1DB900761F126FD10022BAA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = WDWCountdownWidget/WDWCountdownWidget.entitlements;
+				DEVELOPMENT_TEAM = D9R62VXR3G;
+				INFOPLIST_FILE = WDWCountdownWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWVacationCountdownTimer.WDWCountdownWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1DB900771F126FD10022BAA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = WDWCountdownWidget/WDWCountdownWidget.entitlements;
+				DEVELOPMENT_TEAM = D9R62VXR3G;
+				INFOPLIST_FILE = WDWCountdownWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWVacationCountdownTimer.WDWCountdownWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		CA1902F71B10E523000271C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -305,8 +463,10 @@
 		CA1902FA1B10E523000271C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = WDWCountdownTimer/WDWCountdownTimer.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = D9R62VXR3G;
 				INFOPLIST_FILE = WDWCountdownTimer/Info.plist;
@@ -323,8 +483,10 @@
 		CA1902FB1B10E523000271C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = WDWCountdownTimer/WDWCountdownTimer.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = D9R62VXR3G;
 				INFOPLIST_FILE = WDWCountdownTimer/Info.plist;
@@ -341,6 +503,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1DB900751F126FD10022BAA4 /* Build configuration list for PBXNativeTarget "WDWCountdownWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DB900761F126FD10022BAA4 /* Debug */,
+				1DB900771F126FD10022BAA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CA1902D71B10E523000271C4 /* Build configuration list for PBXProject "WDWCountdownTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

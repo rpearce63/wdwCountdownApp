@@ -18,6 +18,7 @@ class VacationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //scheduleWidgetUpdate()
         self.navigationController!.isToolbarHidden = false
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         self.navigationController?.toolbar.addSubview(bannerView)
@@ -170,9 +171,10 @@ class VacationTableViewController: UITableViewController {
                 return v1.arrivalDate < v2.arrivalDate
             }
             tableView.reloadData()
-            //updateBadge()
+           
             // Save the vacations.
             saveVacations()
+            updateWidget(vacations: vacations)
         }
     }
     
@@ -223,11 +225,46 @@ class VacationTableViewController: UITableViewController {
         
     }
     
-    func updateBadge() {
-        let application = UIApplication.shared
-        //application.registerForRemoteNotifications()
-        let countdown = dateFormatter.calculateDaysUntilArrival(endDate: vacations[0].arrivalDate)
-        application.applicationIconBadgeNumber = countdown
+    func updateWidget(vacations: [Vacation]) {
+            
+           let userDefaults = UserDefaults(suiteName: "group.com.pearce.wdwCountdownTimer")
+                userDefaults?.set(vacations[0].arrivalDate, forKey: "arrivalDate")
+                userDefaults?.set(vacations[0].title, forKey: "title")
+                userDefaults?.synchronize()
+        
+        
+        
+        //        if UserDefaults.standard.bool(forKey: "reminders_preference") {
+        //            let application = UIApplication.shared
+        //            //application.registerForRemoteNotifications()
+        //
+        //            application.applicationIconBadgeNumber = countdown
+        //        } else {
+                    //UIApplication.shared.applicationIconBadgeNumber = 0
+        //        }
+        
     }
+    
+//    func scheduleWidgetUpdate() {
+//        if UserDefaults.standard.bool(forKey: "reminders_preference") {
+//            // Configure the trigger for midnight every day.
+//            var dateInfo = DateComponents()
+//            dateInfo.hour = 0
+//            dateInfo.minute = 0
+//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
+//            
+//            // Create the request object.
+//            let request = UNNotificationRequest(identifier: "UpdateWidget", content: updateWidget(), trigger: trigger)
+//            
+//            // Schedule the request.
+//            let center = UNUserNotificationCenter.current()
+//            center.add(request) { (error : Error?) in
+//                if let theError = error {
+//                    print(theError.localizedDescription)
+//                }
+//            }
+//        }
+//    }
+
     
 }
