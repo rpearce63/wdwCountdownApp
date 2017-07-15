@@ -23,6 +23,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var cruiseSwitch: UISwitch!
     @IBOutlet weak var ccLevelView: UIView!
     @IBOutlet weak var ccLevelPicker: UIPickerView!
+    @IBOutlet weak var tripTypeSwitch: UISegmentedControl!
    
     /*
         This value is either passed by `VacationTableViewController` in `prepareForSegue(_:sender:)`
@@ -61,9 +62,10 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             //photoImageView.image = vacation.photo
             arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
             datePicker.date = vacation.arrivalDate
-            parksSwitch.isOn = vacation.parks
-            cruiseSwitch.isOn = vacation.cruise
-            ccLevelView.isHidden = !cruiseSwitch.isOn
+            tripTypeSwitch.selectedSegmentIndex = vacation.parks ? 0 : 1
+//            parksSwitch.isOn = vacation.parks
+//            cruiseSwitch.isOn = vacation.cruise
+            ccLevelView.isHidden = tripTypeSwitch.selectedSegmentIndex == 0
             ccLevelPicker.selectRow(ccLevelPickerData.index(of: vacation.ccLevel)!, inComponent: 0, animated: false)
         } else {
             arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: Date())
@@ -137,8 +139,8 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             let photo = setPhoto()
             //let rating = ratingControl.rating
             let arrivalDate = datePicker.date
-            let parksBool = parksSwitch.isOn
-            let cruiseBool = cruiseSwitch.isOn
+            let parksBool = tripTypeSwitch.selectedSegmentIndex == 0
+            let cruiseBool = tripTypeSwitch.selectedSegmentIndex == 1
             let ccLevel = ccLevelPickerData[ccLevelPicker.selectedRow(inComponent: 0)]
             
             // Set the meal to be passed to MealListTableViewController after the unwind segue.
@@ -147,7 +149,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     func setPhoto() -> UIImage {
-        if cruiseSwitch.isOn {
+        if tripTypeSwitch.selectedSegmentIndex == 1 {
             return UIImage(named: "dclship")!
         } else {
             return UIImage(named: "wdwcastle-1")!
@@ -162,14 +164,25 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     
-    @IBAction func cruiseSwitchChanged(_ sender: UISwitch) {
-        ccLevelView.isHidden = !sender.isOn
-        parksSwitch.isOn = !sender.isOn
-    }
+//    @IBAction func cruiseSwitchChanged(_ sender: UISwitch) {
+//        ccLevelView.isHidden = !sender.isOn
+//        parksSwitch.isOn = !sender.isOn
+//    }
+//    
+//    @IBAction func parkSwitchChanged(_ sender: UISwitch) {
+//        cruiseSwitch.isOn = !sender.isOn
+//        ccLevelView.isHidden = sender.isOn
+//    }
     
-    @IBAction func parkSwitchChanged(_ sender: UISwitch) {
-        cruiseSwitch.isOn = !sender.isOn
-        ccLevelView.isHidden = sender.isOn
+    @IBAction func tripTypeSwitched(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+            case 0:
+                ccLevelView.isHidden = true
+            case 1:
+                ccLevelView.isHidden = false
+            default:
+                break;
+        }
     }
         
 }

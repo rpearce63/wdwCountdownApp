@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Notification access denied.")
             }
         }
-        //scheduleBadgeUpdate()
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         sleep(2)
         return true
     }
