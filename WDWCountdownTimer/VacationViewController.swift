@@ -15,15 +15,17 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     // MARK: Properties
     
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var photoImageView: UIImageView!
+    //@IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var arrivalDateLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var parksSwitch: UISwitch!
-    @IBOutlet weak var cruiseSwitch: UISwitch!
+    //@IBOutlet weak var datePicker: UIDatePicker!
+    //@IBOutlet weak var parksSwitch: UISwitch!
+    //@IBOutlet weak var cruiseSwitch: UISwitch!
     @IBOutlet weak var ccLevelView: UIView!
-    @IBOutlet weak var ccLevelPicker: UIPickerView!
+    //@IBOutlet weak var ccLevelPicker: UIPickerView!
     @IBOutlet weak var tripTypeSwitch: UISegmentedControl!
+    @IBOutlet weak var ccLevelTextField: UITextField!
+    @IBOutlet weak var arrivalDateTextField: UITextField!
    
     /*
         This value is either passed by `VacationTableViewController` in `prepareForSegue(_:sender:)`
@@ -42,13 +44,16 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let ccLevelPicker = UIPickerView()
+        ccLevelPicker.delegate = self
+        //ccLevelPicker.dataSource = self
+        ccLevelTextField.inputView = ccLevelPicker
         
-        self.ccLevelPicker.delegate = self
-        self.ccLevelPicker.dataSource = self
-        
-        //radioButtonController = SSRadioButtonsController(buttons: button1, button2, button3)
-        //radioButtonController?.delegate = self
-        //radioButtonController!.shouldLetDeSelect = true
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        arrivalDateTextField.inputView = datePicker
+        datePicker.addTarget(self, action: #selector(VacationViewController.dateChanged), for: .valueChanged)
+        arrivalDateTextField.inputAccessoryView = UIToolbar().getToolBar(mySelect: #selector(VacationViewController.dismissPicker))
         
         
         dateFormatter.dateStyle = .full
@@ -60,20 +65,24 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             navigationItem.title = vacation.title
             titleTextField.text   = vacation.title
             //photoImageView.image = vacation.photo
-            arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
-            datePicker.date = vacation.arrivalDate
+            //arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
+            arrivalDateTextField.text = dateFormatter.string(from: vacation.arrivalDate)
             tripTypeSwitch.selectedSegmentIndex = vacation.parks ? 0 : 1
 //            parksSwitch.isOn = vacation.parks
 //            cruiseSwitch.isOn = vacation.cruise
             ccLevelView.isHidden = tripTypeSwitch.selectedSegmentIndex == 0
-            ccLevelPicker.selectRow(ccLevelPickerData.index(of: vacation.ccLevel)!, inComponent: 0, animated: false)
+            ccLevelTextField.text = vacation.ccLevel
+            //ccLevelPicker.selectRow(ccLevelPickerData.index(of: vacation.ccLevel)!, inComponent: 0, animated: false)
         } else {
-            arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: Date())
+            arrivalDateTextField.text = dateFormatter.formatFullDate(dateIn: Date())
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
         checkValidVacationName()
         titleTextField.becomeFirstResponder()
+        datePicker.date = dateFormatter.date (from: arrivalDateTextField.text!)!
+        let selectedCCLevel = (ccLevelTextField.text?.isEmpty)! ? "First Cruise" : ccLevelTextField.text
+        ccLevelPicker.selectRow((ccLevelPickerData.index(of: selectedCCLevel!))!, inComponent: 0, animated: true)
     }
     
     
@@ -92,9 +101,10 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         return ccLevelPickerData[row]
     }
 
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        vacation?.ccLevel = ccLevelPickerData[row]
-//    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        ccLevelTextField.text = ccLevelPickerData[row]
+        self.view.endEditing(false)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
@@ -138,13 +148,13 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             let title = titleTextField.text ?? ""
             let photo = setPhoto()
             //let rating = ratingControl.rating
-            let arrivalDate = datePicker.date
+            let arrivalDate = dateFormatter.date (from: arrivalDateTextField.text!)
             let parksBool = tripTypeSwitch.selectedSegmentIndex == 0
             let cruiseBool = tripTypeSwitch.selectedSegmentIndex == 1
-            let ccLevel = ccLevelPickerData[ccLevelPicker.selectedRow(inComponent: 0)]
+            let ccLevel = ccLevelTextField.text
             
             // Set the meal to be passed to MealListTableViewController after the unwind segue.
-            vacation = Vacation(title: title, photo: photo, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool, ccLevel: ccLevel, notes: [])
+            vacation = Vacation(title: title, photo: photo, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool, ccLevel: ccLevel!, notes: [])
         }
     }
     
@@ -158,9 +168,13 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     // MARK: Actions
     
-    @IBAction func dateChanged(_ sender: AnyObject) {
+    func dateChanged(_ sender: UIDatePicker) {
         titleTextField.resignFirstResponder()
-        arrivalDateLabel.text = dateFormatter.string(from: datePicker.date) 
+        arrivalDateTextField.text = dateFormatter.string(from: sender.date)
+    }
+    
+    func dismissPicker(){
+        self.view.endEditing(false)
     }
     
     

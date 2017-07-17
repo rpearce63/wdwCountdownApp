@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D0A44B61F0C0C8900C32FA0 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA8C3E21F0C0A88003A1F51 /* GoogleMobileAds.framework */; };
+		1D2F17331F1C747B000A225B /* PickerToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F17321F1C747B000A225B /* PickerToolBar.swift */; };
 		1DA8C3E01F0C0A05003A1F51 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA8C3DF1F0C0A05003A1F51 /* Default-568h@2x.png */; };
 		1DB900691F126FD10022BAA4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEE31EE1F1263AF00C4F881 /* NotificationCenter.framework */; };
 		1DB9006C1F126FD10022BAA4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9006B1F126FD10022BAA4 /* TodayViewController.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D2F17321F1C747B000A225B /* PickerToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerToolBar.swift; sourceTree = "<group>"; };
 		1DA8C3DF1F0C0A05003A1F51 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1DA8C3E21F0C0A88003A1F51 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = System/Library/Frameworks/GoogleMobileAds.framework; sourceTree = SDKROOT; };
 		1DB900681F126FD10022BAA4 /* WDWCountdownWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WDWCountdownWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				CA96F92A1B1144F7000CC7F8 /* Assets.xcassets */,
 				CA1902E81B10E523000271C4 /* LaunchScreen.storyboard */,
 				CA1902EB1B10E523000271C4 /* Info.plist */,
+				1D2F17321F1C747B000A225B /* PickerToolBar.swift */,
 			);
 			name = WDWCountdownTimer;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				1DDD36471D90D9F100453A0D /* DateUtils.swift in Sources */,
 				1DCA50651D8CCF5000454F52 /* Vacation.swift in Sources */,
 				CA5D06011B162F2300095F0F /* VacationTableViewCell.swift in Sources */,
+				1D2F17331F1C747B000A225B /* PickerToolBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
