@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PeG-L1-4vC">
-                                <rect key="frame" x="12" y="72" width="351" height="254.5"/>
+                                <rect key="frame" x="12" y="72" width="351" height="197"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter vacation title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jaC-rX-iHd" userLabel="Title Text Field">
                                         <rect key="frame" x="0.0" y="0.0" width="351" height="30"/>
@@ -145,30 +145,30 @@
                                         </connections>
                                     </segmentedControl>
                                     <view hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfp-MZ-Mjz">
-                                        <rect key="frame" x="0.0" y="134.5" width="351" height="120"/>
+                                        <rect key="frame" x="0.0" y="134.5" width="351" height="62.5"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Castaway Club Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Q-hs-4xv">
+                                                <rect key="frame" x="0.0" y="4" width="351" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Level" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vU8-Cb-qd2">
-                                                <rect key="frame" x="0.0" y="24.5" width="351" height="30"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="351" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Castaway Club Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Q-hs-4xv">
-                                                <rect key="frame" x="0.0" y="0.0" width="351" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="t4Q-hs-4xv" firstAttribute="top" secondItem="sfp-MZ-Mjz" secondAttribute="top" id="9AL-ek-b7w"/>
+                                            <constraint firstAttribute="bottom" secondItem="vU8-Cb-qd2" secondAttribute="bottom" constant="4" id="89R-of-29t"/>
                                             <constraint firstItem="vU8-Cb-qd2" firstAttribute="top" secondItem="t4Q-hs-4xv" secondAttribute="bottom" constant="4" id="9U6-3l-jzw"/>
+                                            <constraint firstItem="t4Q-hs-4xv" firstAttribute="top" secondItem="sfp-MZ-Mjz" secondAttribute="top" constant="4" id="NIE-f6-lIw"/>
                                             <constraint firstItem="t4Q-hs-4xv" firstAttribute="leading" secondItem="vU8-Cb-qd2" secondAttribute="leading" id="Qhf-mJ-A5O"/>
                                             <constraint firstItem="vU8-Cb-qd2" firstAttribute="leading" secondItem="sfp-MZ-Mjz" secondAttribute="leading" id="R2D-K4-fgW"/>
                                             <constraint firstAttribute="trailing" secondItem="vU8-Cb-qd2" secondAttribute="trailing" id="arc-gr-U4e"/>
-                                            <constraint firstAttribute="height" constant="120" id="fQ3-fx-Sk0"/>
                                             <constraint firstItem="t4Q-hs-4xv" firstAttribute="trailing" secondItem="vU8-Cb-qd2" secondAttribute="trailing" id="vgz-0H-1VE"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -181,6 +181,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="jaC-rX-iHd" firstAttribute="top" secondItem="PeG-L1-4vC" secondAttribute="top" id="aDi-AG-trl"/>
+                                    <constraint firstItem="sfp-MZ-Mjz" firstAttribute="top" secondItem="PCm-R0-dZU" secondAttribute="bottom" constant="8" id="fRW-b8-ret"/>
                                 </constraints>
                             </stackView>
                         </subviews>
