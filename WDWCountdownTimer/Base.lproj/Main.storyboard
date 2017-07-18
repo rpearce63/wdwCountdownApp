@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PeG-L1-4vC">
-                                <rect key="frame" x="12" y="72" width="351" height="386"/>
+                                <rect key="frame" x="12" y="72" width="351" height="376"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Enter vacation title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jaC-rX-iHd" userLabel="Title Text Field">
                                         <rect key="frame" x="0.0" y="0.0" width="351" height="50"/>
@@ -154,7 +154,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <view hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfp-MZ-Mjz">
-                                        <rect key="frame" x="0.0" y="180" width="351" height="80"/>
+                                        <rect key="frame" x="0.0" y="180" width="351" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Castaway Club Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Q-hs-4xv">
                                                 <rect key="frame" x="8" y="8" width="335" height="20.5"/>
@@ -177,7 +177,7 @@
                                             <constraint firstItem="vU8-Cb-qd2" firstAttribute="leading" secondItem="sfp-MZ-Mjz" secondAttribute="leading" constant="8" id="mfR-NP-SgQ"/>
                                             <constraint firstAttribute="trailing" secondItem="vU8-Cb-qd2" secondAttribute="trailing" constant="8" id="pRx-oD-Mu2"/>
                                             <constraint firstItem="t4Q-hs-4xv" firstAttribute="leading" secondItem="sfp-MZ-Mjz" secondAttribute="leading" constant="8" id="qug-Cg-VQ9"/>
-                                            <constraint firstAttribute="height" constant="80" id="zFq-ee-7LH"/>
+                                            <constraint firstAttribute="height" constant="75" id="zFq-ee-7LH"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -187,10 +187,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGI-yd-f4p">
-                                        <rect key="frame" x="0.0" y="268" width="351" height="80"/>
+                                        <rect key="frame" x="0.0" y="263" width="351" height="75"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dN7-CE-T1g">
-                                                <rect key="frame" x="8" y="8" width="335" height="69"/>
+                                                <rect key="frame" x="8" y="4" width="335" height="69"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5M-8B-Ejr">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="31"/>
@@ -227,14 +227,14 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="251-gp-pph"/>
+                                            <constraint firstAttribute="height" constant="75" id="251-gp-pph"/>
+                                            <constraint firstItem="dN7-CE-T1g" firstAttribute="top" secondItem="SGI-yd-f4p" secondAttribute="top" constant="4" id="8Bs-QV-0KV"/>
                                             <constraint firstItem="dN7-CE-T1g" firstAttribute="leading" secondItem="SGI-yd-f4p" secondAttribute="leading" constant="8" id="RRZ-8W-Cum"/>
-                                            <constraint firstItem="dN7-CE-T1g" firstAttribute="top" secondItem="SGI-yd-f4p" secondAttribute="top" constant="8" id="U4j-oz-B8Z"/>
                                             <constraint firstAttribute="trailing" secondItem="dN7-CE-T1g" secondAttribute="trailing" constant="8" id="gJY-xL-8dZ"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8ft-mq-5Uv">
-                                        <rect key="frame" x="0.0" y="356" width="351" height="30"/>
+                                        <rect key="frame" x="0.0" y="346" width="351" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservation #:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJI-j4-Om8">
                                                 <rect key="frame" x="0.0" y="0.0" width="109.5" height="30"/>
@@ -251,9 +251,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="sfp-MZ-Mjz" firstAttribute="top" secondItem="PCm-R0-dZU" secondAttribute="bottom" constant="8" id="xCd-uT-mLN"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

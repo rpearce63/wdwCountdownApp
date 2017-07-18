@@ -85,6 +85,15 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             arrivalDateTextField.text = dateFormatter.formatFullDate(dateIn: Date())
         }
         
+        let imageView = UIImageView();
+        let image = UIImage(named: "touch");
+        imageView.image = image;
+        imageView.frame = CGRect(x: 10, y: 10, width: 20, height: 20)
+        arrivalDateTextField.addSubview(imageView)
+        let leftView = UIView.init(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        arrivalDateTextField.leftView = leftView;
+        arrivalDateTextField.leftViewMode = UITextFieldViewMode.always
+        
         // Enable the Save button only if the text field has a valid Vacation name.
         checkValidVacationName()
         titleTextField.becomeFirstResponder()
