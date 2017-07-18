@@ -26,10 +26,14 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var tripTypeSwitch: UISegmentedControl!
     @IBOutlet weak var ccLevelTextField: UITextField!
     @IBOutlet weak var arrivalDateTextField: UITextField!
+    @IBOutlet weak var parksDetail: UIView!
+    @IBOutlet weak var resortTextField: UITextField!
+    @IBOutlet weak var resvTextField: UITextField!
+    @IBOutlet weak var onPropertySwitch: UISwitch!
    
     /*
         This value is either passed by `VacationTableViewController` in `prepareForSegue(_:sender:)`
-        or constructed as part of adding a new meal.
+        or constructed as part of adding a new vaccation.
     */
     var vacation: Vacation?
     var parksChecked: Bool = false
@@ -60,7 +64,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         // Handle the text field’s user input through delegate callbacks.
         titleTextField.delegate = self
         
-        // Set up views if editing an existing Meal.
+        // Set up views if editing an existing Vacation.
         if let vacation = vacation {
             navigationItem.title = vacation.title
             titleTextField.text   = vacation.title
@@ -71,13 +75,17 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
 //            parksSwitch.isOn = vacation.parks
 //            cruiseSwitch.isOn = vacation.cruise
             ccLevelView.isHidden = tripTypeSwitch.selectedSegmentIndex == 0
+            parksDetail.isHidden = tripTypeSwitch.selectedSegmentIndex == 1
             ccLevelTextField.text = vacation.ccLevel
             //ccLevelPicker.selectRow(ccLevelPickerData.index(of: vacation.ccLevel)!, inComponent: 0, animated: false)
+            resortTextField.text = vacation.resort
+            resvTextField.text = vacation.resv
+            onPropertySwitch.isOn = vacation.onProperty
         } else {
             arrivalDateTextField.text = dateFormatter.formatFullDate(dateIn: Date())
         }
         
-        // Enable the Save button only if the text field has a valid Meal name.
+        // Enable the Save button only if the text field has a valid Vacation name.
         checkValidVacationName()
         titleTextField.becomeFirstResponder()
         datePicker.date = dateFormatter.date (from: arrivalDateTextField.text!)!
@@ -152,9 +160,13 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             let parksBool = tripTypeSwitch.selectedSegmentIndex == 0
             let cruiseBool = tripTypeSwitch.selectedSegmentIndex == 1
             let ccLevel = ccLevelTextField.text
+            let resort = resortTextField.text
+            let resv = resvTextField.text
+            let onProperty = onPropertySwitch.isOn
             
-            // Set the meal to be passed to MealListTableViewController after the unwind segue.
-            vacation = Vacation(title: title, photo: photo, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool, ccLevel: ccLevel!, notes: [])
+            // Set the vacation to be passed to VacationTableViewController after the unwind segue.
+            vacation = Vacation(title: title, photo: photo, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool,
+                                ccLevel: ccLevel!, resort: resort!, resv: resv!, onProperty: onProperty)
         }
     }
     
@@ -178,6 +190,10 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismissPicker()
+    }
+    
 //    @IBAction func cruiseSwitchChanged(_ sender: UISwitch) {
 //        ccLevelView.isHidden = !sender.isOn
 //        parksSwitch.isOn = !sender.isOn
@@ -192,11 +208,14 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         switch sender.selectedSegmentIndex {
             case 0:
                 ccLevelView.isHidden = true
+                parksDetail.isHidden = false
             case 1:
                 ccLevelView.isHidden = false
+                parksDetail.isHidden = true
             default:
                 break;
         }
+        dismissPicker()
     }
         
 }

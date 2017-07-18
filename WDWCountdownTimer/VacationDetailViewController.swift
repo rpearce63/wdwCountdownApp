@@ -38,7 +38,7 @@ class VacationDetailViewController: UIViewController {
             arrivalDateLabel.text = "\(dateFormatter.formatFullDate(dateIn: vacation.arrivalDate))"
             if vacation.parks == true {
                 adrDateLabel.text = "\(dateFormatter.calculateADRDate(arrivalDate: vacation.arrivalDate))"
-                fpDateLabel.text = "\(dateFormatter.calculateFPDate(arrivalDate: vacation.arrivalDate))"
+                fpDateLabel.text = "\(dateFormatter.calculateFPDate(arrivalDate: vacation.arrivalDate, onProperty: vacation.onProperty))"
                 parksView.isHidden = false
             }
             if vacation.cruise == true {

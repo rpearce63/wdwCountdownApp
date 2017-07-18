@@ -47,8 +47,8 @@ extension DateFormatter {
         return getDateFormatter(style: .medium).string(from:  calculateKeyDate(fromDate: arrivalDate, dayCount: -180))
     }
     
-    func calculateFPDate(arrivalDate: Date) -> String {
-         return getDateFormatter(style: .medium).string(from:  calculateKeyDate(fromDate: arrivalDate, dayCount: -60))
+    func calculateFPDate(arrivalDate: Date, onProperty: Bool) -> String {
+        return getDateFormatter(style: .medium).string(from:  calculateKeyDate(fromDate: arrivalDate, dayCount: onProperty ? -60 : -30))
     }
     
     func calculateCruiseCheckinDate(sailDate: Date, ccLevel: String) -> String {

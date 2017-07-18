@@ -17,8 +17,9 @@ class Vacation: NSObject, NSCoding {
     var parks: Bool
     var cruise: Bool
     var ccLevel: String
-    var notes: [NSString]?
-    
+    var resort: String?
+    var resv: String?
+    var onProperty: Bool
     
     // MARK: Archiving Paths
     
@@ -34,12 +35,14 @@ class Vacation: NSObject, NSCoding {
         static let parksKey = "parks"
         static let cruiseKey = "cruise"
         static let ccLevelKey = "ccLevel"
-        static let notesKey = "notes"
+        static let resortKey = "resort"
+        static let resvKey = "resv"
+        static let onPropertyKey = "onProperty"
     }
     
     // MARK: Initialization
     
-    init?(title: String, photo: UIImage?, arrivalDate: Date?, parks: Bool, cruise: Bool, ccLevel: String, notes: [NSString]?) {
+    init?(title: String, photo: UIImage?, arrivalDate: Date?, parks: Bool, cruise: Bool, ccLevel: String, resort: String, resv: String, onProperty: Bool) {
         // Initialize stored properties.
        self.title = title
         self.photo = photo
@@ -47,7 +50,9 @@ class Vacation: NSObject, NSCoding {
         self.parks = parks
         self.cruise = cruise
         self.ccLevel = ccLevel
-        self.notes = notes
+        self.resort = resort
+        self.resv = resv
+        self.onProperty = onProperty
         
         super.init()
         
@@ -66,10 +71,14 @@ class Vacation: NSObject, NSCoding {
         aCoder.encode(parks, forKey: PropertyKey.parksKey)
         aCoder.encode(cruise, forKey: PropertyKey.cruiseKey)
         aCoder.encode(ccLevel, forKey: PropertyKey.ccLevelKey)
-        aCoder.encode(notes, forKey: PropertyKey.notesKey)
+        aCoder.encode(resort, forKey: PropertyKey.resortKey)
+        aCoder.encode(resv, forKey: PropertyKey.resvKey)
+        aCoder.encode(onProperty, forKey: PropertyKey.onPropertyKey)
+        
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
+        
         let title = aDecoder.decodeObject(forKey: PropertyKey.titleKey) as! String
         
         // Because photo is an optional property of Meal, use conditional cast.
@@ -79,8 +88,10 @@ class Vacation: NSObject, NSCoding {
         let parks = aDecoder.decodeBool(forKey: PropertyKey.parksKey)
         let cruise = aDecoder.decodeBool(forKey: PropertyKey.cruiseKey)
         let ccLevel = aDecoder.decodeObject(forKey: PropertyKey.ccLevelKey) as! String
-        let notes = aDecoder.decodeObject(forKey: PropertyKey.notesKey) as! [NSString]?
-        // Must call designated initializer.
-        self.init(title: title, photo: photo, arrivalDate: arrivalDate, parks: parks, cruise: cruise, ccLevel: ccLevel, notes: notes)
+        let resort = aDecoder.decodeObject(forKey: PropertyKey.resortKey) as? String ?? ""
+        let resv = aDecoder.decodeObject(forKey: PropertyKey.resvKey) as? String  ?? ""
+        let onProperty = aDecoder.decodeBool(forKey: PropertyKey.onPropertyKey)
+                      // Must call designated initializer.
+        self.init(title: title, photo: photo, arrivalDate: arrivalDate, parks: parks, cruise: cruise, ccLevel: ccLevel, resort: resort, resv: resv, onProperty: onProperty)
     }
 }

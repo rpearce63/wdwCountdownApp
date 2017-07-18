@@ -204,7 +204,7 @@ class VacationTableViewController: UITableViewController {
                     if 0 ... 7 ~= adrDays {
                         message.append("Make dining reservations in \(adrDays) days for \(vacation.title)\n")
                     }
-                    let fpDays = dateFormatter.calculateDaysUntilArrival(endDate: dateFormatter.calculateKeyDate(fromDate: arrivalDate!, dayCount: -60))
+                    let fpDays = dateFormatter.calculateDaysUntilArrival(endDate: dateFormatter.calculateKeyDate(fromDate: arrivalDate!, dayCount: vacation.onProperty ? -60 : -30))
                     if 0 ... 7 ~= fpDays {
                         message.append("Make FastPass reservations in \(fpDays) days for \(vacation.title)\n")
                     }
