@@ -104,7 +104,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PeG-L1-4vC">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PeG-L1-4vC">
                                 <rect key="frame" x="12" y="72" width="351" height="386"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Enter vacation title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jaC-rX-iHd" userLabel="Title Text Field">
@@ -157,13 +157,13 @@
                                         <rect key="frame" x="0.0" y="180" width="351" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Castaway Club Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Q-hs-4xv">
-                                                <rect key="frame" x="8" y="4" width="335" height="20.5"/>
+                                                <rect key="frame" x="8" y="8" width="335" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Level" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vU8-Cb-qd2">
-                                                <rect key="frame" x="8" y="28.5" width="335" height="30"/>
+                                                <rect key="frame" x="8" y="36.5" width="335" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -171,13 +171,13 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="68Z-Ko-q0i"/>
-                                            <constraint firstItem="vU8-Cb-qd2" firstAttribute="top" secondItem="t4Q-hs-4xv" secondAttribute="bottom" constant="4" id="8ge-us-13R"/>
+                                            <constraint firstItem="vU8-Cb-qd2" firstAttribute="top" secondItem="t4Q-hs-4xv" secondAttribute="bottom" constant="8" id="8ge-us-13R"/>
                                             <constraint firstAttribute="trailing" secondItem="t4Q-hs-4xv" secondAttribute="trailing" constant="8" id="MIA-5q-Lni"/>
-                                            <constraint firstItem="t4Q-hs-4xv" firstAttribute="top" secondItem="sfp-MZ-Mjz" secondAttribute="top" constant="4" id="iNy-1j-9ht"/>
+                                            <constraint firstItem="t4Q-hs-4xv" firstAttribute="top" secondItem="sfp-MZ-Mjz" secondAttribute="top" constant="8" id="iNy-1j-9ht"/>
                                             <constraint firstItem="vU8-Cb-qd2" firstAttribute="leading" secondItem="sfp-MZ-Mjz" secondAttribute="leading" constant="8" id="mfR-NP-SgQ"/>
                                             <constraint firstAttribute="trailing" secondItem="vU8-Cb-qd2" secondAttribute="trailing" constant="8" id="pRx-oD-Mu2"/>
                                             <constraint firstItem="t4Q-hs-4xv" firstAttribute="leading" secondItem="sfp-MZ-Mjz" secondAttribute="leading" constant="8" id="qug-Cg-VQ9"/>
+                                            <constraint firstAttribute="height" constant="80" id="zFq-ee-7LH"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -251,6 +251,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="sfp-MZ-Mjz" firstAttribute="top" secondItem="PCm-R0-dZU" secondAttribute="bottom" constant="8" id="xCd-uT-mLN"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
