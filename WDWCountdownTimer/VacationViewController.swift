@@ -43,14 +43,18 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     //var radioButtonController: SSRadioButtonsController?
     
-    let ccLevelPickerData: [String] = ["First Cruise", "Silver", "Gold", "Platinum", "Concierge"]
+    let ccLevelPickerData: [String] = ["Select","First Cruise", "Silver", "Gold", "Platinum", "Concierge"]
+    let ccColors : [UIColor] = [.white, UIColor(red: 0.15, green: 0.23, blue: 0.34, alpha: 1),
+                                UIColor(red:0.75, green:0.80, blue:0.81, alpha:1.0),
+                                UIColor(red:0.87, green:0.71, blue:0.20, alpha:1.0),
+                                .black, UIColor(red:0.24, green:0.70, blue:0.31, alpha:1.0)]
+    let ccTextColors : [UIColor] = [.white,.white, .white, .white, .white, .white]
     let dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let ccLevelPicker = UIPickerView()
         ccLevelPicker.delegate = self
-        //ccLevelPicker.dataSource = self
         ccLevelTextField.inputView = ccLevelPicker
         
         let datePicker = UIDatePicker()
@@ -77,12 +81,14 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             ccLevelView.isHidden = tripTypeSwitch.selectedSegmentIndex == 0
             parksDetail.isHidden = tripTypeSwitch.selectedSegmentIndex == 1
             ccLevelTextField.text = vacation.ccLevel
+            colorizeTextField(index: ccLevelPickerData.index(of: vacation.ccLevel)!)
             //ccLevelPicker.selectRow(ccLevelPickerData.index(of: vacation.ccLevel)!, inComponent: 0, animated: false)
             resortTextField.text = vacation.resort
             resvTextField.text = vacation.resv
             onPropertySwitch.isOn = vacation.onProperty
         } else {
             arrivalDateTextField.text = dateFormatter.formatFullDate(dateIn: Date())
+            
         }
         
         let imageView = UIImageView();
@@ -98,7 +104,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         checkValidVacationName()
         titleTextField.becomeFirstResponder()
         datePicker.date = dateFormatter.date (from: arrivalDateTextField.text!)!
-        let selectedCCLevel = (ccLevelTextField.text?.isEmpty)! ? "First Cruise" : ccLevelTextField.text
+        let selectedCCLevel = (ccLevelTextField.text?.isEmpty)! ? "Select" : ccLevelTextField.text
         ccLevelPicker.selectRow((ccLevelPickerData.index(of: selectedCCLevel!))!, inComponent: 0, animated: true)
     }
     
@@ -120,7 +126,14 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         ccLevelTextField.text = ccLevelPickerData[row]
+        colorizeTextField(index: row)
         self.view.endEditing(false)
+    }
+    
+    
+    func colorizeTextField(index: Int) {
+        ccLevelTextField.backgroundColor = ccColors[index]
+        ccLevelTextField.textColor = ccTextColors[index]
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
