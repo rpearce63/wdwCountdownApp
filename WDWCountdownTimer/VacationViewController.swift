@@ -69,23 +69,23 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         titleTextField.delegate = self
         
         // Set up views if editing an existing Vacation.
-        if let vacation = vacation {
-            navigationItem.title = vacation.title
-            titleTextField.text   = vacation.title
+        if let aVacation = vacation {
+            navigationItem.title = aVacation.title
+            titleTextField.text   = aVacation.title
             //photoImageView.image = vacation.photo
             //arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
-            arrivalDateTextField.text = dateFormatter.string(from: vacation.arrivalDate)
-            tripTypeSwitch.selectedSegmentIndex = vacation.parks ? 0 : 1
+            arrivalDateTextField.text = dateFormatter.string(from: aVacation.arrivalDate)
+            tripTypeSwitch.selectedSegmentIndex = aVacation.parks ? 0 : 1
 //            parksSwitch.isOn = vacation.parks
 //            cruiseSwitch.isOn = vacation.cruise
             ccLevelView.isHidden = tripTypeSwitch.selectedSegmentIndex == 0
             parksDetail.isHidden = tripTypeSwitch.selectedSegmentIndex == 1
-            ccLevelTextField.text = vacation.ccLevel
-            colorizeTextField(index: ccLevelPickerData.index(of: vacation.ccLevel)!)
+            ccLevelTextField.text = aVacation.ccLevel
+            colorizeTextField(index: ccLevelPickerData.index(of: aVacation.ccLevel.isEmpty ? "Select" : aVacation.ccLevel )!)
             //ccLevelPicker.selectRow(ccLevelPickerData.index(of: vacation.ccLevel)!, inComponent: 0, animated: false)
-            resortTextField.text = vacation.resort
-            resvTextField.text = vacation.resv
-            onPropertySwitch.isOn = vacation.onProperty
+            resortTextField.text = aVacation.resort
+            resvTextField.text = aVacation.resv
+            onPropertySwitch.isOn = aVacation.onProperty
         } else {
             arrivalDateTextField.text = dateFormatter.formatFullDate(dateIn: Date())
             
@@ -185,10 +185,10 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             let resort = resortTextField.text
             let resv = resvTextField.text
             let onProperty = onPropertySwitch.isOn
-            
+            let notes = vacation?.notes
             // Set the vacation to be passed to VacationTableViewController after the unwind segue.
             vacation = Vacation(title: title, photo: photo, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool,
-                                ccLevel: ccLevel!, resort: resort!, resv: resv!, onProperty: onProperty)
+                                ccLevel: ccLevel!, resort: resort!, resv: resv!, onProperty: onProperty, notes: notes!)
         }
     }
     

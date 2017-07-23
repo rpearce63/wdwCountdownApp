@@ -18,19 +18,12 @@ class VacationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //scheduleWidgetUpdate()
-        self.navigationController!.isToolbarHidden = false
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        self.navigationController?.toolbar.addSubview(bannerView)
-        bannerView.adUnitID = "ca-app-pub-5535985233243357/2100500420"
-        bannerView.rootViewController = self
-        let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID, "95194d67850f2724e5c5bf840fb7b33d" ]
-        bannerView.load(request)
+        
+        setupAdBar()
         
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem
-        //editButtonItem.title = "Edit List"
+        
         // Load any saved vacations, otherwise load sample data.
         if let savedVacations = loadVacations() {
             
@@ -92,11 +85,11 @@ class VacationTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let screenSize: CGRect = UIScreen.main.bounds
-//        let screenHeight = screenSize.height
-//        return (screenHeight * 0.8) / CGFloat(vacations.count)
-//    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let screenSize: CGRect = UIScreen.main.bounds
+        let screenHeight = screenSize.height
+        return (screenHeight * 0.8) / 4
+    }
 
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -231,40 +224,16 @@ class VacationTableViewController: UITableViewController {
                 userDefaults?.set(vacations[0].arrivalDate, forKey: "arrivalDate")
                 userDefaults?.set(vacations[0].title, forKey: "title")
                 userDefaults?.synchronize()
-        
-        
-        
-        //        if UserDefaults.standard.bool(forKey: "reminders_preference") {
-        //            let application = UIApplication.shared
-        //            //application.registerForRemoteNotifications()
-        //
-        //            application.applicationIconBadgeNumber = countdown
-        //        } else {
-                    //UIApplication.shared.applicationIconBadgeNumber = 0
-        //        }
-        
+     }
+    
+    func setupAdBar() {
+        self.navigationController!.isToolbarHidden = false
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        self.navigationController?.toolbar.addSubview(bannerView)
+        bannerView.adUnitID = "ca-app-pub-5535985233243357/2100500420"
+        bannerView.rootViewController = self
+        let request = GADRequest()
+        //request.testDevices = [ kGADSimulatorID, "95194d67850f2724e5c5bf840fb7b33d" ]
+        bannerView.load(request)
     }
-    
-//    func scheduleWidgetUpdate() {
-//        if UserDefaults.standard.bool(forKey: "reminders_preference") {
-//            // Configure the trigger for midnight every day.
-//            var dateInfo = DateComponents()
-//            dateInfo.hour = 0
-//            dateInfo.minute = 0
-//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: true)
-//            
-//            // Create the request object.
-//            let request = UNNotificationRequest(identifier: "UpdateWidget", content: updateWidget(), trigger: trigger)
-//            
-//            // Schedule the request.
-//            let center = UNUserNotificationCenter.current()
-//            center.add(request) { (error : Error?) in
-//                if let theError = error {
-//                    print(theError.localizedDescription)
-//                }
-//            }
-//        }
-//    }
-
-    
 }

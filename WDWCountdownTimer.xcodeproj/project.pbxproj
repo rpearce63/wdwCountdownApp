@@ -14,6 +14,7 @@
 		1DB9006C1F126FD10022BAA4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB9006B1F126FD10022BAA4 /* TodayViewController.swift */; };
 		1DB9006F1F126FD10022BAA4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9006D1F126FD10022BAA4 /* MainInterface.storyboard */; };
 		1DB900731F126FD10022BAA4 /* WDWCountdownWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1DB900681F126FD10022BAA4 /* WDWCountdownWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1DC7E3621F1F8FE40024F9DB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC7E3611F1F8FE40024F9DB /* UIView.swift */; };
 		1DCA50651D8CCF5000454F52 /* Vacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCA50641D8CCF5000454F52 /* Vacation.swift */; };
 		1DDD36431D90C8C200453A0D /* VacationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */; };
 		1DDD36471D90D9F100453A0D /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36461D90D9F100453A0D /* DateUtils.swift */; };
@@ -62,6 +63,7 @@
 		1DB900741F126FD10022BAA4 /* WDWCountdownTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDWCountdownTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB900781F127A950022BAA4 /* WDWCountdownTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WDWCountdownTimer.entitlements; path = WDWCountdownTimer/WDWCountdownTimer.entitlements; sourceTree = "<group>"; };
 		1DB900791F127AD00022BAA4 /* WDWCountdownWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WDWCountdownWidget.entitlements; sourceTree = "<group>"; };
+		1DC7E3611F1F8FE40024F9DB /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1DCA50641D8CCF5000454F52 /* Vacation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vacation.swift; path = WDWCountdownTimer/Vacation.swift; sourceTree = "<group>"; };
 		1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VacationDetailViewController.swift; path = WDWCountdownTimer/VacationDetailViewController.swift; sourceTree = "<group>"; };
 		1DDD36461D90D9F100453A0D /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = WDWCountdownTimer/DateUtils.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				CA1902E11B10E523000271C4 /* VacationViewController.swift */,
 				1DCA50641D8CCF5000454F52 /* Vacation.swift */,
 				CA1902E31B10E523000271C4 /* Main.storyboard */,
+				1DC7E3611F1F8FE40024F9DB /* UIView.swift */,
 				1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */,
 				1DDD36461D90D9F100453A0D /* DateUtils.swift */,
 				CA5D06021B162F2300095F0F /* VacationTableViewController.swift */,
@@ -283,6 +286,7 @@
 				1DDD36471D90D9F100453A0D /* DateUtils.swift in Sources */,
 				1DCA50651D8CCF5000454F52 /* Vacation.swift in Sources */,
 				CA5D06011B162F2300095F0F /* VacationTableViewCell.swift in Sources */,
+				1DC7E3621F1F8FE40024F9DB /* UIView.swift in Sources */,
 				1D2F17331F1C747B000A225B /* PickerToolBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

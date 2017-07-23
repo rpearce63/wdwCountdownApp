@@ -20,6 +20,7 @@ class Vacation: NSObject, NSCoding {
     var resort: String?
     var resv: String?
     var onProperty: Bool
+    var notes : String?
     
     // MARK: Archiving Paths
     
@@ -38,11 +39,12 @@ class Vacation: NSObject, NSCoding {
         static let resortKey = "resort"
         static let resvKey = "resv"
         static let onPropertyKey = "onProperty"
+        static let notesKey = "notes"
     }
     
     // MARK: Initialization
     
-    init?(title: String, photo: UIImage?, arrivalDate: Date?, parks: Bool, cruise: Bool, ccLevel: String, resort: String, resv: String, onProperty: Bool) {
+    init?(title: String, photo: UIImage?, arrivalDate: Date?, parks: Bool, cruise: Bool, ccLevel: String, resort: String, resv: String, onProperty: Bool, notes: String) {
         // Initialize stored properties.
        self.title = title
         self.photo = photo
@@ -53,6 +55,7 @@ class Vacation: NSObject, NSCoding {
         self.resort = resort
         self.resv = resv
         self.onProperty = onProperty
+        self.notes = notes
         
         super.init()
         
@@ -74,6 +77,7 @@ class Vacation: NSObject, NSCoding {
         aCoder.encode(resort, forKey: PropertyKey.resortKey)
         aCoder.encode(resv, forKey: PropertyKey.resvKey)
         aCoder.encode(onProperty, forKey: PropertyKey.onPropertyKey)
+        aCoder.encode(notes, forKey: PropertyKey.notesKey)
         
     }
     
@@ -91,7 +95,8 @@ class Vacation: NSObject, NSCoding {
         let resort = aDecoder.decodeObject(forKey: PropertyKey.resortKey) as? String ?? ""
         let resv = aDecoder.decodeObject(forKey: PropertyKey.resvKey) as? String  ?? ""
         let onProperty = aDecoder.decodeBool(forKey: PropertyKey.onPropertyKey)
+        let notes = aDecoder.decodeObject(forKey: PropertyKey.notesKey) as? String ?? ""
                       // Must call designated initializer.
-        self.init(title: title, photo: photo, arrivalDate: arrivalDate, parks: parks, cruise: cruise, ccLevel: ccLevel, resort: resort, resv: resv, onProperty: onProperty)
+        self.init(title: title, photo: photo, arrivalDate: arrivalDate, parks: parks, cruise: cruise, ccLevel: ccLevel, resort: resort, resv: resv, onProperty: onProperty, notes: notes)
     }
 }

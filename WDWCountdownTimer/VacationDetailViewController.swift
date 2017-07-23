@@ -23,6 +23,11 @@ class VacationDetailViewController: UIViewController {
     
     //@IBOutlet weak var tripPhoto: UIImageView!
     @IBOutlet weak var cruiseView: UIView!
+    @IBOutlet weak var reservation: UILabel!
+    @IBOutlet weak var resort: UILabel!
+    @IBOutlet weak var resvStack: UIStackView!
+    @IBOutlet weak var resortStack: UIStackView!
+    @IBOutlet weak var notesTextView: UITextView!
     
     var vacation: Vacation?
     let dateFormatter: DateFormatter = DateFormatter()
@@ -40,13 +45,26 @@ class VacationDetailViewController: UIViewController {
                 adrDateLabel.text = "\(dateFormatter.calculateADRDate(arrivalDate: vacation.arrivalDate))"
                 fpDateLabel.text = "\(dateFormatter.calculateFPDate(arrivalDate: vacation.arrivalDate, onProperty: vacation.onProperty))"
                 parksView.isHidden = false
+                resort.text = vacation.resort
+                resortStack.isHidden = (vacation.resort?.isEmpty)!
             }
             if vacation.cruise == true {
                 cruiseCheckin.text = "\(dateFormatter.calculateCruiseCheckinDate(sailDate: vacation.arrivalDate, ccLevel: vacation.ccLevel))"
                 cruiseView.isHidden = false
             }
+            reservation.text = vacation.resv
+            resvStack.isHidden = (vacation.resv?.isEmpty)!
+            notesTextView.text = vacation.notes
             //tripPhoto.image = vacation.photo
+            //reservation.layer.borderColor = UIColor.black.cgColor
+            //reservation.layer.borderWidth = 1.0
+            
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        vacation?.notes = notesTextView.text
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,5 +86,8 @@ class VacationDetailViewController: UIViewController {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
