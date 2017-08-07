@@ -15,7 +15,8 @@ class VacationTableViewController: UITableViewController {
      var bannerView: GADBannerView!
     var vacations :[Vacation] = []
     let dateFormatter: DateFormatter = DateFormatter()
-
+    var rowIndex: IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,9 +76,10 @@ class VacationTableViewController: UITableViewController {
         
         // Fetches the appropriate vacation for the data source layout.
         let vacation = vacations[(indexPath as NSIndexPath).row]
-        let rowBackgroundImg = vacation.parks ? "wdw-row-background" : "dcl-row-background"
+        //let rowBackgroundImg = vacation.parks ? "wdw-row-background" : "dcl-row-background"
         cell.titleLabel.text = vacation.title
-        cell.backgroundView = UIImageView(image: UIImage(named: rowBackgroundImg))
+        cell.photoImageView.image = vacation.iconImage ?? setDefaultIcon(parks: vacation.parks)
+        cell.backgroundImageView.image = vacation.backgoundImage ?? setDefaultBackground(parks: vacation.parks)
         //cell.photoImageView.image = vacation.photo
         cell.arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
         cell.countdownLabel.text = "\(dateFormatter.calculateDaysUntilArrival(endDate: vacation.arrivalDate)) days to go!"
@@ -85,11 +87,18 @@ class VacationTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let screenSize: CGRect = UIScreen.main.bounds
-        let screenHeight = screenSize.height
-        return (screenHeight * 0.8) / 4
+    func setDefaultIcon(parks: Bool) -> UIImage {
+        return (parks ? UIImage(named:"WDWCastle") : UIImage(named:"dcl-logo"))!
     }
+    
+    func setDefaultBackground(parks: Bool) -> UIImage {
+        return (parks ? UIImage(named:"wdw-row-background") : UIImage(named:"dcl-row-background"))!
+    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let screenSize: CGRect = UIScreen.main.bounds
+//        let screenHeight = screenSize.height
+//        return (screenHeight * 0.8) / 4
+//    }
 
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -110,27 +119,28 @@ class VacationTableViewController: UITableViewController {
         }    
     }
 
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") {(action, indexPath) in
+            self.performSegue(withIdentifier: "EditRow", sender: tableView.cellForRow(at: indexPath))
+        }
+        edit.backgroundColor = .orange
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete" ) { (action, indexPath) in
+            self.vacations.remove(at: (indexPath as NSIndexPath).row)
+            self.saveVacations()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        delete.backgroundColor = .red
+        return [delete, edit]
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+    
+    
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "ShowDetail" {
             let vacationDetailViewController = segue.destination as! VacationDetailViewController
             
@@ -143,7 +153,17 @@ class VacationTableViewController: UITableViewController {
         }
         else if segue.identifier == "AddItem" {
             print("Adding new vacation.")
+        } else if segue.identifier == "EditRow" {
+            if let selectedCell = sender as? VacationTableViewCell {
+                rowIndex = tableView.indexPath(for: selectedCell)
+                let backgroundPhoto = selectedCell.backgroundImageView.image
+                let getPhotoViewController = segue.destination as! GetPhotoViewController
+                getPhotoViewController.backgroundImage = backgroundPhoto
+                getPhotoViewController.iconImage = selectedCell.photoImageView.image
+                getPhotoViewController.isParks = vacations[((rowIndex)?.row)!].parks
+            }
         }
+        
     }
     
 
@@ -169,7 +189,19 @@ class VacationTableViewController: UITableViewController {
             saveVacations()
             updateWidget(vacations: vacations)
         }
+        if let sourceViewController = sender.source as? GetPhotoViewController {
+            let selectedRow = tableView.cellForRow(at: rowIndex!) as! VacationTableViewCell
+            let rowData = vacations[(rowIndex?.row)!]
+            rowData.iconImage = sourceViewController.iconImage
+            rowData.backgoundImage = sourceViewController.backgroundImage
+            //tableView.reloadRows(at: [rowIndex!], with: .none)
+            selectedRow.photoImageView.image = sourceViewController.iconImage
+            selectedRow.backgroundImageView.image = sourceViewController.backgroundImage
+            saveVacations()
+
+        }
     }
+    
     
     // MARK: NSCoding
     
@@ -233,7 +265,7 @@ class VacationTableViewController: UITableViewController {
         bannerView.adUnitID = "ca-app-pub-5535985233243357/2100500420"
         bannerView.rootViewController = self
         let request = GADRequest()
-        //request.testDevices = [ kGADSimulatorID, "95194d67850f2724e5c5bf840fb7b33d" ]
+        request.testDevices = [ kGADSimulatorID, "95194d67850f2724e5c5bf840fb7b33d" ]
         bannerView.load(request)
     }
 }

@@ -16,7 +16,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     @IBOutlet weak var titleTextField: UITextField!
     //@IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var arrivalDateLabel: UILabel!
+    //@IBOutlet weak var arrivalDateLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     //@IBOutlet weak var datePicker: UIDatePicker!
     //@IBOutlet weak var parksSwitch: UISwitch!
@@ -176,7 +176,6 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if saveButton === sender as! UIBarButtonItem {
             let title = titleTextField.text ?? ""
-            let photo = setPhoto()
             //let rating = ratingControl.rating
             let arrivalDate = dateFormatter.date (from: arrivalDateTextField.text!)
             let parksBool = tripTypeSwitch.selectedSegmentIndex == 0
@@ -185,18 +184,28 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             let resort = resortTextField.text
             let resv = resvTextField.text
             let onProperty = onPropertySwitch.isOn
-            let notes = vacation?.notes
+            let notes = vacation?.notes ?? ""
+            let iconImage = setIconPhoto()
+            let backgroundImage = setBackgroundImage()
             // Set the vacation to be passed to VacationTableViewController after the unwind segue.
-            vacation = Vacation(title: title, photo: photo, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool,
-                                ccLevel: ccLevel!, resort: resort!, resv: resv!, onProperty: onProperty, notes: notes!)
+            vacation = Vacation(title: title, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool,
+                                ccLevel: ccLevel!, resort: resort!, resv: resv!, onProperty: onProperty, notes: notes, iconImage: iconImage, backgroundImage: backgroundImage)
         }
     }
     
-    func setPhoto() -> UIImage {
+    func setIconPhoto() -> UIImage {
         if tripTypeSwitch.selectedSegmentIndex == 1 {
-            return UIImage(named: "dclship")!
+            return UIImage(named: "dcl-logo")!
         } else {
-            return UIImage(named: "wdwcastle-1")!
+            return UIImage(named: "WDWCastle")!
+        }
+    }
+    
+    func setBackgroundImage() -> UIImage {
+        if tripTypeSwitch.selectedSegmentIndex == 1 {
+            return UIImage(named: "dcl-row-background")!
+        } else {
+            return UIImage(named: "wdw-row-background")!
         }
     }
     
@@ -215,16 +224,6 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dismissPicker()
     }
-    
-//    @IBAction func cruiseSwitchChanged(_ sender: UISwitch) {
-//        ccLevelView.isHidden = !sender.isOn
-//        parksSwitch.isOn = !sender.isOn
-//    }
-//    
-//    @IBAction func parkSwitchChanged(_ sender: UISwitch) {
-//        cruiseSwitch.isOn = !sender.isOn
-//        ccLevelView.isHidden = sender.isOn
-//    }
     
     @IBAction func tripTypeSwitched(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {

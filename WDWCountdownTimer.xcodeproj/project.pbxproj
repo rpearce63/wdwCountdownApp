@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D0A44B61F0C0C8900C32FA0 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA8C3E21F0C0A88003A1F51 /* GoogleMobileAds.framework */; };
 		1D2F17331F1C747B000A225B /* PickerToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2F17321F1C747B000A225B /* PickerToolBar.swift */; };
 		1DA8C3E01F0C0A05003A1F51 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA8C3DF1F0C0A05003A1F51 /* Default-568h@2x.png */; };
 		1DB900691F126FD10022BAA4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEE31EE1F1263AF00C4F881 /* NotificationCenter.framework */; };
@@ -19,6 +18,8 @@
 		1DDD36431D90C8C200453A0D /* VacationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */; };
 		1DDD36471D90D9F100453A0D /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD36461D90D9F100453A0D /* DateUtils.swift */; };
 		1DEE31E81F12551300C4F881 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DEE31E71F12551300C4F881 /* Settings.bundle */; };
+		1DF5AB8B1F360CEC00AF4FAB /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5AB8A1F360CEC00AF4FAB /* GoogleMobileAds.framework */; };
+		1DFEBCA31F31428700F890A6 /* GetPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFEBCA21F31428700F890A6 /* GetPhotoViewController.swift */; };
 		CA1902E01B10E523000271C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902DF1B10E523000271C4 /* AppDelegate.swift */; };
 		CA1902E21B10E523000271C4 /* VacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1902E11B10E523000271C4 /* VacationViewController.swift */; };
 		CA1902E51B10E523000271C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1902E31B10E523000271C4 /* Main.storyboard */; };
@@ -55,7 +56,6 @@
 /* Begin PBXFileReference section */
 		1D2F17321F1C747B000A225B /* PickerToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerToolBar.swift; sourceTree = "<group>"; };
 		1DA8C3DF1F0C0A05003A1F51 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		1DA8C3E21F0C0A88003A1F51 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = System/Library/Frameworks/GoogleMobileAds.framework; sourceTree = SDKROOT; };
 		1DB900681F126FD10022BAA4 /* WDWCountdownWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WDWCountdownWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB9006B1F126FD10022BAA4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		1DB9006E1F126FD10022BAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		1DDD36461D90D9F100453A0D /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = WDWCountdownTimer/DateUtils.swift; sourceTree = "<group>"; };
 		1DEE31E71F12551300C4F881 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		1DEE31EE1F1263AF00C4F881 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		1DF5AB8A1F360CEC00AF4FAB /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		1DFEBCA21F31428700F890A6 /* GetPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPhotoViewController.swift; sourceTree = "<group>"; };
 		CA1902DF1B10E523000271C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = WDWCountdownTimer/AppDelegate.swift; sourceTree = "<group>"; };
 		CA1902E11B10E523000271C4 /* VacationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VacationViewController.swift; path = WDWCountdownTimer/VacationViewController.swift; sourceTree = "<group>"; };
 		CA1902E41B10E523000271C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0A44B61F0C0C8900C32FA0 /* GoogleMobileAds.framework in Frameworks */,
+				1DF5AB8B1F360CEC00AF4FAB /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +110,7 @@
 				CA1902E11B10E523000271C4 /* VacationViewController.swift */,
 				1DCA50641D8CCF5000454F52 /* Vacation.swift */,
 				CA1902E31B10E523000271C4 /* Main.storyboard */,
+				1DFEBCA21F31428700F890A6 /* GetPhotoViewController.swift */,
 				1DC7E3611F1F8FE40024F9DB /* UIView.swift */,
 				1DDD36421D90C8C200453A0D /* VacationDetailViewController.swift */,
 				1DDD36461D90D9F100453A0D /* DateUtils.swift */,
@@ -124,7 +127,7 @@
 		1DA8C3E11F0C0A88003A1F51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1DA8C3E21F0C0A88003A1F51 /* GoogleMobileAds.framework */,
+				1DF5AB8A1F360CEC00AF4FAB /* GoogleMobileAds.framework */,
 				1DEE31EE1F1263AF00C4F881 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DFEBCA31F31428700F890A6 /* GetPhotoViewController.swift in Sources */,
 				CA1902E21B10E523000271C4 /* VacationViewController.swift in Sources */,
 				CA1902E01B10E523000271C4 /* AppDelegate.swift in Sources */,
 				CA5D06031B162F2300095F0F /* VacationTableViewController.swift in Sources */,
@@ -339,8 +343,12 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_ENTITLEMENTS = WDWCountdownWidget/WDWCountdownWidget.entitlements;
 				DEVELOPMENT_TEAM = D9R62VXR3G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = WDWCountdownWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWVacationCountdownTimer.WDWCountdownWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -358,8 +366,12 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_ENTITLEMENTS = WDWCountdownWidget/WDWCountdownWidget.entitlements;
 				DEVELOPMENT_TEAM = D9R62VXR3G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = WDWCountdownWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pearce.WDWVacationCountdownTimer.WDWCountdownWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,6 +489,10 @@
 				CODE_SIGN_ENTITLEMENTS = WDWCountdownTimer/WDWCountdownTimer.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = D9R62VXR3G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = WDWCountdownTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -497,6 +513,10 @@
 				CODE_SIGN_ENTITLEMENTS = WDWCountdownTimer/WDWCountdownTimer.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = D9R62VXR3G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = WDWCountdownTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
