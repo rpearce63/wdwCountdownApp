@@ -60,7 +60,7 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         arrivalDateTextField.inputView = datePicker
-        datePicker.addTarget(self, action: #selector(VacationViewController.dateChanged), for: .valueChanged)
+        datePicker.addTarget(self, action: #selector(VacationViewController.dateChanged), for: [.valueChanged, .editingDidBegin])
         arrivalDateTextField.inputAccessoryView = UIToolbar().getToolBar(mySelect: #selector(VacationViewController.dismissPicker))
         
         

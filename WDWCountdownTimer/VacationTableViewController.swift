@@ -50,7 +50,15 @@ class VacationTableViewController: UITableViewController {
             //updateBadge()
             checkForKeyDates()
         }
+        let userDefaults = UserDefaults()
+        if userDefaults.value(forKey: "newFeaturesDisplayed") as? String != "done" {
+            var newFeaturesMessage = "* Swipe the row left to display the Edit option.\n"
+            newFeaturesMessage.append("* Select your own icon and background for each row from your photo gallery.\n")
+            newFeaturesMessage.append("* Enter free form notes on the Details view.")
         
+            showAlert(title: "New Features", message: newFeaturesMessage)
+            userDefaults.set("done", forKey: "newFeaturesDisplayed")
+        }
         
     }
 
