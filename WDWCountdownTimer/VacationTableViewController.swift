@@ -20,6 +20,7 @@ class VacationTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //addPageBackgroundImage()
         setupAdBar()
         
         // Use the edit button item provided by the table view controller.
@@ -87,7 +88,7 @@ class VacationTableViewController: UITableViewController {
         //let rowBackgroundImg = vacation.parks ? "wdw-row-background" : "dcl-row-background"
         cell.titleLabel.text = vacation.title
         cell.photoImageView.image = vacation.iconImage ?? setDefaultIcon(parks: vacation.parks)
-        cell.backgroundImageView.image = vacation.backgoundImage ?? setDefaultBackground(parks: vacation.parks)
+        cell.backgroundImageView.image = vacation.backgroundImage ?? setDefaultBackground(parks: vacation.parks)
         //cell.photoImageView.image = vacation.photo
         cell.arrivalDateLabel.text = dateFormatter.formatFullDate(dateIn: vacation.arrivalDate)
         cell.countdownLabel.text = "\(dateFormatter.calculateDaysUntilArrival(endDate: vacation.arrivalDate)) days to go!"
@@ -157,6 +158,7 @@ class VacationTableViewController: UITableViewController {
                 let indexPath = tableView.indexPath(for: selectedVacationCell)!
                 let selectedVacation = vacations[(indexPath as NSIndexPath).row]
                 vacationDetailViewController.vacation = selectedVacation
+                vacationDetailViewController.rowIndex = indexPath.row
             }
         }
         else if segue.identifier == "AddItem" {
@@ -201,7 +203,7 @@ class VacationTableViewController: UITableViewController {
             let selectedRow = tableView.cellForRow(at: rowIndex!) as! VacationTableViewCell
             let rowData = vacations[(rowIndex?.row)!]
             rowData.iconImage = sourceViewController.iconImage
-            rowData.backgoundImage = sourceViewController.backgroundImage
+            rowData.backgroundImage = sourceViewController.backgroundImage
             //tableView.reloadRows(at: [rowIndex!], with: .none)
             selectedRow.photoImageView.image = sourceViewController.iconImage
             selectedRow.backgroundImageView.image = sourceViewController.backgroundImage
@@ -275,5 +277,20 @@ class VacationTableViewController: UITableViewController {
         let request = GADRequest()
         request.testDevices = [ kGADSimulatorID, "95194d67850f2724e5c5bf840fb7b33d" ]
         bannerView.load(request)
+    }
+    
+    func addPageBackgroundImage() {
+        let background = UIImage(named: "LaunchScreenImage")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIViewContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        imageView.alpha = 0.5
+        view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+        
     }
 }

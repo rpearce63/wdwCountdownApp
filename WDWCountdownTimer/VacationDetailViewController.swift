@@ -30,6 +30,7 @@ class VacationDetailViewController: UIViewController {
     @IBOutlet weak var notesTextView: UITextView!
     
     var vacation: Vacation?
+    var rowIndex: Int?
     let dateFormatter: DateFormatter = DateFormatter()
     
     override func viewDidLoad() {
@@ -65,6 +66,9 @@ class VacationDetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         vacation?.notes = notesTextView.text
+        var vacations: [Vacation] = loadVacations()!
+        vacations[rowIndex!] = vacation!
+        saveVacations(vacations: vacations)
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,6 +92,17 @@ class VacationDetailViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func saveVacations(vacations: [Vacation]) {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(vacations, toFile: Vacation.ArchiveURL.path)
+        if !isSuccessfulSave {
+            print("Failed to save vacations...")
+        }
+    }
+    
+    func loadVacations() -> [Vacation]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Vacation.ArchiveURL.path) as? [Vacation]
     }
 
 }

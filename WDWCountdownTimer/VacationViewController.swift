@@ -185,8 +185,8 @@ class VacationViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             let resv = resvTextField.text
             let onProperty = onPropertySwitch.isOn
             let notes = vacation?.notes ?? ""
-            let iconImage = setIconPhoto()
-            let backgroundImage = setBackgroundImage()
+            let iconImage = vacation?.iconImage ?? setIconPhoto()
+            let backgroundImage = vacation?.backgroundImage ?? setBackgroundImage()
             // Set the vacation to be passed to VacationTableViewController after the unwind segue.
             vacation = Vacation(title: title, arrivalDate: arrivalDate, parks: parksBool, cruise: cruiseBool,
                                 ccLevel: ccLevel!, resort: resort!, resv: resv!, onProperty: onProperty, notes: notes, iconImage: iconImage, backgroundImage: backgroundImage)

@@ -22,7 +22,7 @@ class Vacation: NSObject, NSCoding {
     var onProperty: Bool
     var notes : String?
     var iconImage : UIImage?
-    var backgoundImage : UIImage?
+    var backgroundImage : UIImage?
     
     // MARK: Archiving Paths
     
@@ -59,7 +59,7 @@ class Vacation: NSObject, NSCoding {
         self.onProperty = onProperty
         self.notes = notes
         self.iconImage = iconImage
-        self.backgoundImage = backgroundImage
+        self.backgroundImage = backgroundImage
         
         super.init()
         
@@ -100,7 +100,7 @@ class Vacation: NSObject, NSCoding {
         aCoder.encode(onProperty, forKey: PropertyKey.onPropertyKey)
         aCoder.encode(notes, forKey: PropertyKey.notesKey)
         aCoder.encode(iconImage, forKey: PropertyKey.iconImageKey)
-        aCoder.encode(backgoundImage, forKey: PropertyKey.backgroundImageKey)
+        aCoder.encode(backgroundImage, forKey: PropertyKey.backgroundImageKey)
         
     }
     
