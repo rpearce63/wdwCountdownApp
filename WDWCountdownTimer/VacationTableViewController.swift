@@ -21,7 +21,7 @@ class VacationTableViewController: UITableViewController {
         super.viewDidLoad()
         
         //addPageBackgroundImage()
-        setupAdBar()
+        //setupAdBar()
         
         // Use the edit button item provided by the table view controller.
         navigationItem.leftBarButtonItem = editButtonItem

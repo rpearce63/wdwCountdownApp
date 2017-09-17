@@ -10,6 +10,7 @@
 import UIKit
 import GoogleMobileAds
 import UserNotifications
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         UIApplication.shared.applicationIconBadgeNumber = 0
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
         sleep(2)
         return true
     }
